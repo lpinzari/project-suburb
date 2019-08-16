@@ -4,3 +4,4 @@
 
 - Ludovico Pinzari
 - Ayush James
+- Freddie Butcher
