@@ -1,3 +1,48 @@
 // Place all the styles related to the Suburbs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// -- Heading Text -- //
+.text_align {
+  text-align: center;
+}
+
+.suburbs_head_h {
+  margin-top: 50px;
+}
+
+.suburbs_head_p {
+  margin-bottom: 40px;
+}
+
+.suburbs_cardholder {
+  width: 903px;
+  margin: 0 auto;
+
+}
+
+.suburb_card div {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  border-radius: 0;
+}
+
+.suburb_card img {
+  border-radius: 0;
+}
+
+.suburb_card_button {
+  color: #3941bd;
+  border-color: #3941bd;
+}
+
+.suburb_card_button:hover {
+  color: white;
+  background-color: #3941bd;
+  border-color: #3941bd;
+}
+
+.suburb_card2 div {
+  margin-bottom: 10px;
+}
