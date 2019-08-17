@@ -15,10 +15,36 @@
   margin-bottom: 40px;
 }
 
+// -- Filter section -- //
+.filter_card {
+  width:250px;
+  display: inline-block;
+  padding: 30px;
+  border-right: solid 1px #E0E0E0;
+  border-top: solid 1px #E0E0E0;
+
+}
+
+
+
+
+
+
+
+// -- Suburb List content -- //
 .suburbs_cardholder {
   width: 903px;
   margin: 0 auto;
+  margin-left: 5px;
+  display: inline-block;
+}
 
+.suburb_card_link {
+  color: #343a40;
+}
+
+.suburb_card_link:hover {
+  color: #343a40;
 }
 
 .suburb_card div {
@@ -45,4 +71,11 @@
 
 .suburb_card2 div {
   margin-bottom: 10px;
+}
+
+
+.suburb_card2:hover {
+  transition-timing-function: ease-in-out;
+  transition: 0.3s;
+  box-shadow: 2px 4px 10px #BEBEBE;
 }
