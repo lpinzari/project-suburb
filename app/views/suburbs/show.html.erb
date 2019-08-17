@@ -1,54 +1,201 @@
 <h1>Suburbs#show</h1>
 <p>Find me in app/views/suburbs/show.html.erb</p>
 
-<!-- Secondary Nav Section -->
+<!-- Carousel -->
 
-<ul class="nav nav-pills nav-fill">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Summary</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Lifestyle</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Cost of Living</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Cost of Living</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Renting in <%= @suburb.name %></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Entertainment</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Transport</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Amenities</a>
-  </li>
-
-  </li>
-</ul>
-
-<div class="content_body">
-  <div class="filter_card">
-
-  </div>
-
-  <div class="suburbs_card">
-      <% @suburb.name %>
-      <div class="card" style="width: 18rem;">
-        <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= @suburb.name %></h5>
-          <p class="card-text"><%= @suburb.description %></p>
-          <p class="card-text"><%= @suburb.median_rent %></p>
-          <p class="card-text"><%= @suburb.living_cost %></p>
-          <p class="card-text"><%= @suburb.long %></p>
-          <p class="card-text"><%= @suburb.lat %></p>
-        </div>
+<div class="show_carousel">
+  <div class="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="<%= @suburb.image_url %>" class="d-block w-100" alt="...">
       </div>
+      <div class="carousel-item">
+        <img src="<%= @suburb.image_url %>" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="<%= @suburb.image_url %>" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+  </div>
+</div>
+
+<!-- Secondary Nav Section -->
+<div class="show_secondary_nav">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Summary</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Lifestyle</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Cost of Living</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Cost of Living</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Renting in <%= @suburb.name %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Entertainment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Transport</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Amenities</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Suburb Description -->
+
+<div class="show_description">
+  <h2><%= @suburb.name %></h2>
+  <p><%= @suburb.description %></p>
+</div>
+
+
+<!-- Gallery -->
+
+<div class="show_gallery">
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image one">
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image two">
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image three">
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image four">
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image five">
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image six">
+  </div>
+</div>
+
+<!-- Lifestyle text/image block -->
+
+<div class="show_lifestyle">
+  <h2>Lifestyle</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image six">
+  </div>
+</div>
+
+<!-- Cost of living block -->
+
+<div class="living_cost">
+  <div>
+    <h2>Cost of living</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, architecto, voluptas rem quos at voluptatibus ducimus nemo quae dolorem veritatis non, accusantium porro dolore! Facere placeat quam, iure reiciendis dolorem.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, architecto, voluptas rem quos at voluptatibus ducimus nemo quae dolorem veritatis non, accusantium porro dolore! Facere placeat quam, iure reiciendis dolorem.</p>
+  </div>
+  <div>
+    <h3>Family of four</h3>
+    <p>[$1,400] per week</p>
+    <h3>Couple</h3>
+    <p>[$1,300] per week</p>
+    <h3>Single Young Professional</h3>
+    <p>[$1,000] per week</p>
+  </div>
+</div>
+
+<!-- Renting in suburb block -->
+<div class="show_renting">
+  <div>
+    <h2>Renting in <%= @suburb.name %></h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
+  </div>
+  <div>
+    <h3>Average Rent Rates</h3>
+    <p>Apartment: $650 per week</p>
+    <p>Town house: $1,000 per week</p>
+    <p>Suburban house: $1,500 per week</p>
+  </div>
+  <div>
+    <p>[Apartment icon]</p>
+    <p>300 available</p>
+    <p>[Town house icon]</p>
+    <p>22 available</p>
+    <p>[Suburban house icon]</p>
+    <p>20 available</p>
+  </div>
+</div>
+
+<!-- Entertainment text/image block -->
+
+<div class="show_entertainment">
+  <h2>Entertainment</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image six">
+  </div>
+</div>
+
+<!-- Transport in suburb -->
+<div class="show_transport">
+  <div>
+    <h2>Transport in <%= @suburb.name %></h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
+  </div>
+  <div>
+    <h3>Trains</h3>
+    <p>[Trains icon]</p>
+    <p>T1, T4</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ut, obcaecati totam id dolorem cum incidunt porro, dolore accusamus autem neque natus consequuntur! Eius, reprehenderit, doloribus. Autem, fugiat, fugit. Facilis.</p>
+    <h3>Buses</h3>
+    <p>[Bus icon]</p>
+    <p>333, 387, 389</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ut, obcaecati totam id dolorem cum incidunt porro, dolore accusamus autem neque natus consequuntur! Eius, reprehenderit, doloribus. Autem, fugiat, fugit. Facilis.</p>
+  </div>
+</div>
+
+<!-- Amenities Map -->
+
+<div class="show_amenities">
+  <div>
+    <h2>Amenities</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur perferendis dolor consequuntur nemo dolores temporibus, sed neque at corrupti ducimus quisquam natus quaerat sunt, rem debitis ad architecto nulla officia.</p>
+    <h3>Filter Map</h3>
+    <ul>
+      <li>Train station</li>
+      <li>Bus route</li>
+      <li>Park</li>
+      <li>Beach</li>
+      <li>Shopping area</li>
+      <li>School</li>
+      <li>Medical facility</li>
+      <li>University</li>
+    </ul>
+  </div>
+  <div>
+    <p>[Map element]</p>
   </div>
 </div>
