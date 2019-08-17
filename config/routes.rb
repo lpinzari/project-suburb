@@ -8,6 +8,6 @@
 
 Rails.application.routes.draw do
   root :to => 'suburbs#index'
+  resources :suburbs
 
-  
 end
