@@ -1,6 +1,26 @@
-<h1>Suburbs#index</h1>
+<h1>Sydney Suburbs Guide!</h1>
 <p>Find me in app/views/suburbs/index.html.erb</p>
 
-<div>
+<div class="content_body">
+  <div class="filter_card">
 
+  </div>
+
+  <div class="suburbs_card">
+      <% @suburb.each do |suburb| %>
+      <div class="card" style="width: 18rem;">
+        <img src="<%= suburb.image_url %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= suburb.name %></h5>
+          <p class="card-text"><%= suburb.description %></p>
+          <p class="card-text"><%= suburb.median_rent %></p>
+          <p class="card-text"><%= suburb.living_cost %></p>
+          <p class="card-text"><%= suburb.long %></p>
+          <p class="card-text"><%= suburb.lat %></p>
+          <a href="#" class="btn btn-primary">See guide ></a>
+        </div>
+      <% end %>
+      </div>
+
+  </div>
 </div>
