@@ -7,15 +7,20 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Suburb.destroy_all
+
 puts "Creating suburb"
 
-s1 = Suburb.create :name => "Bondi Beach",
-:description => "Bondi Beach is a popular beach and the name of the surrounding suburb in Sydney, New South Wales, Australia. Bondi Beach is located 7 km (4 mi) east of the Sydney central business district, in the local government area of Waverley Council, in the Eastern Suburbs. Bondi, North Bondi, and Bondi Junction are neighbouring suburbs. Bondi Beach is one of the most visited tourist sites in Australia.",
-:image_url => "http://cdn.cnn.com/cnnnext/dam/assets/180115111824-an-bondi-beach-4.jpg",
-:median_rent => "700",
-:living_cost => "4",
-:long => "151.275",
-:lat => "-33.891",
+s1 = Suburb.create(
+name: "Bondi Beach",
+description: "Bondi Beach is a popular beach and the name of the surrounding suburb in Sydney, New South Wales, Australia. Bondi Beach is located 7 km (4 mi) east of the Sydney central business district, in the local government area of Waverley Council, in the Eastern Suburbs. Bondi, North Bondi, and Bondi Junction are neighbouring suburbs. Bondi Beach is one of the most visited tourist sites in Australia.",
+image_url: "http://cdn.cnn.com/cnnnext/dam/assets/180115111824-an-bondi-beach-4.jpg",
+median_rent: 700,
+living_cost: 4,
+long: 151.275,
+lat: -33.891)
+
+puts "Suburbs count: #{Suburb.all.length}"
+puts "Suburbs names: #{Suburb.all.pluck("name")}"
 
 s2 = Suburb.create :name => "Sydney CBD",
 :description => "The Sydney City Centre (also Sydney CBD, and often referred to simply as 'Town' or 'the City') is the main commercial centre of Sydney, the state capital of New South Wales and the most populous city in Australia. It extends southwards for about 3 km (2 mi) from Sydney Cove, the point of first European settlement in which the Sydney region was initially established. Due to its pivotal role in Australia's early history, it is one of the oldest established areas in the country.",
