@@ -25,5 +25,121 @@ border-bottom: solid 3px white;
   border-bottom: solid 3px white;
 }
 
+// -- Block Backgrounds - Whites -- //
+.show_summary, .show_living_cost, .show_entertainment, .show_amenities {
+  margin: 0 auto;
+  padding: 50px 60px;
+}
 
-// -- Features NavBar END -- //
+// -- Block Backgrounds - Greys -- //
+.show_lifestyle, .show_renting, .show_transport {
+  margin: 0 auto;
+  padding: 50px 60px;
+  background-color: #F8F8F8;
+}
+
+
+// -- Summary Block -- //
+.suburb_gallery {
+  margin: 0 121px;
+}
+
+.suburb_gallery img {
+  margin: 8px 5px;
+}
+
+// -- Lifestyle and Entertainment Blocks -- //
+.lifestyle_description, .entertainment_description {
+  display: inline-block;
+  width: 500px;
+}
+
+.lifestyle_description p, .entertainment_description p {
+  text-align: justify;
+}
+
+.lifestyle_image, .entertainment_image {
+  display: inline-block;
+  width: 500px;
+  padding: 0 70px;
+  vertical-align: top;
+}
+
+// -- Cost of Living and Renting Blocks -- //
+.living_cost_description, .living_cost_breakdown, {
+  display: inline-block;
+  width: 500px;
+}
+
+.living_cost_description p {
+  text-align: justify;
+}
+
+.living_cost_breakdown {
+  padding: 0 70px;
+}
+
+// -- Renting and Transport Blocks -- //
+.renting_description, .renting_stats, .transport_description, .transport_stats {
+  display: inline-block;
+  width: 500px;
+}
+
+.renting_description p, .transport_description p {
+  text-align: justify;
+}
+
+
+.renting_description h3 {
+  margin-top: 30px;
+}
+
+.renting_stats, .transport_stats {
+  padding: 0 70px;
+  vertical-align: top;
+}
+
+.stats_icon {
+  display: inline-block;
+  width: 100px;
+}
+
+.stats_texts {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.stats_texts_transport {
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+}
+
+.stats_texts p {
+  margin-bottom: 0;
+}
+
+.stats_texts_transport p {
+  margin-bottom: 0;
+}
+
+
+// -- Transport Block -- //
+.transport_stats_buses {
+  margin-top: 50px;
+}
+
+// -- Amenities -- //
+.amenities_description, .amenities_mapping {
+  display: inline-block;
+  width: 500px;
+}
+
+.amenities_description p {
+  text-align: justify;
+}
+
+.amenities_mapping {
+  vertical-align: top;
+  padding: 0 70px;
+}

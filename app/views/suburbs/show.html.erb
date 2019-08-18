@@ -56,7 +56,7 @@
 </div>
 <!-- Carousel END -->
 
-<!-- Secondary Nav Section -->
+<!-- Secondary Nav -->
 <div class="show_secondary_nav sticky-top features_navbar">
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
@@ -82,6 +82,7 @@
     </li>
   </ul>
 </div>
+<!-- Secondary Nav END -->
 
 <!-- Summary block -->
 <div class="show_summary">
@@ -93,24 +94,12 @@
 
   <!-- Gallery -->
   <div class="suburb_gallery">
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image one">
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image two">
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image three">
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image four">
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image five">
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image six">
-    </div>
+      <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image one">
+      <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image two">
+      <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image three">
+      <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image four">
+      <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image five">
+      <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image six">
   </div>
 </div>
 <!-- Summary block END -->
@@ -122,8 +111,8 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
   </div>
-  <div class="card lifestyle_image" style="width: 18rem;">
-    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image six">
+  <div class="lifestyle_image">
+    <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> lifestyle image">
   </div>
 </div>
 <!-- Lifestyle block END -->
@@ -150,8 +139,7 @@
 <div class="show_renting">
   <div class="renting_description">
     <h2>Renting in <%= @suburb.name %></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
 
     <h3>Average Rent Rates</h3>
     <p>Apartment: $650 per week</p>
@@ -159,12 +147,36 @@
     <p>Suburban house: $1,500 per week</p>
   </div>
   <div class="renting_stats">
-    <p>[Apartment icon]</p>
-    <p>300 available</p>
-    <p>[Town house icon]</p>
-    <p>22 available</p>
-    <p>[Suburban house icon]</p>
-    <p>20 available</p>
+    <div class="renting_stats_apartments">
+      <div class="stats_icon">
+        <p>[Apartment icon]</p>
+      </div>
+      <div class="stats_texts">
+        <p class="text-uppercase font-weight-light">Apartments</p>
+        <p><b>300 available</b></p>
+      </div>
+    </div>
+
+    <div class="renting_stats_townhouses">
+      <div class="stats_icon">
+        <p>[Town house icon]</p>
+      </div>
+      <div class="stats_texts">
+        <p class="text-uppercase font-weight-light">Town houses</p>
+        <p><b>22 available</b></p>
+      </div>
+    </div>
+
+    <div class="renting_stats_suburban">
+      <div class="stats_icon">
+        <p>[Town house icon]</p>
+      </div>
+      <div class="stats_texts">
+        <p class="text-uppercase font-weight-light">Suburban houses</p>
+        <p><b>20 available</b></p>
+      </div>
+    </div>
+
   </div>
 </div>
 <!-- Renting in suburb block END -->
@@ -176,8 +188,8 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
   </div>
-  <div class="card entertainment_image" style="width: 18rem;">
-    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="<%= @suburb.name %> gallery image six">
+  <div class="entertainment_image">
+    <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> entertainment image">
   </div>
 </div>
 <!-- Entertainment text/image block END -->
@@ -186,22 +198,32 @@
 <div class="show_transport">
   <div class="transport_description">
     <h2>Transport in <%= @suburb.name %></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
   </div>
   <div class="transport_stats">
     <div class="transport_stats_trains">
-      <h3>Trains</h3>
-      <p>[Trains icon]</p>
-      <p>T1, T4</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ut, obcaecati totam id dolorem cum incidunt porro, dolore accusamus autem neque natus consequuntur! Eius, reprehenderit, doloribus. Autem, fugiat, fugit. Facilis.</p>
+      <div class="stats_icon">
+        <p>[Trains icon]</p>
+      </div>
+      <div class="stats_texts_transport">
+        <p class="text-uppercase font-weight-light">Trains</p>
+        <p><b>T1, T4</b></p>
+        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
     </div>
+
     <div class="transport_stats_buses">
-      <h3>Buses</h3>
-      <p>[Bus icon]</p>
-      <p>333, 387, 389</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ut, obcaecati totam id dolorem cum incidunt porro, dolore accusamus autem neque natus consequuntur! Eius, reprehenderit, doloribus. Autem, fugiat, fugit. Facilis.</p>
+      <div class="stats_icon">
+        <p>[Bus icon]</p>
+      </div>
+      <div class="stats_texts_transport">
+        <p class="text-uppercase font-weight-light">Buses</p>
+        <p><b>333, 387, 389</b></p>
+        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
     </div>
+
   </div>
 </div>
 <!-- Transport in suburb block END -->
