@@ -60,27 +60,28 @@
 <div class="show_secondary_nav sticky-top features_navbar">
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
-      <a class="active_underline" href="#">Summary</a>
+      <a class="active_underline" href="#summary">Summary</a>
     </li>
     <li class="nav-item">
-      <a href="#">Lifestyle</a>
+      <a href="#lifestyle">Lifestyle</a>
     </li>
     <li class="nav-item">
-      <a href="#">Cost of Living</a>
+      <a href="#living_cost">Cost of Living</a>
     </li>
     <li class="nav-item">
-      <a href="#">Renting in <%= @suburb.name %></a>
+      <a href="#renting">Renting in <%= @suburb.name %></a>
     </li>
     <li class="nav-item">
-      <a href="#">Entertainment</a>
+      <a href="#entertainment">Entertainment</a>
     </li>
     <li class="nav-item">
-      <a href="#">Transport</a>
+      <a href="#transport">Transport</a>
     </li>
     <li class="nav-item">
-      <a href="#">Amenities</a>
+      <a href="#amenities">Amenities</a>
     </li>
   </ul>
+<div><a id="summary"></div>
 </div>
 <!-- Secondary Nav END -->
 
@@ -101,7 +102,9 @@
       <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image five">
       <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image six">
   </div>
+<div><a id="<%=  %>lifestyle"></div>
 </div>
+
 <!-- Summary block END -->
 
 <!-- Lifestyle text/image block -->
@@ -114,6 +117,7 @@
   <div class="lifestyle_image">
     <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> lifestyle image">
   </div>
+<div><a id="<%=  %>living_cost"></div>
 </div>
 <!-- Lifestyle block END -->
 
@@ -132,7 +136,9 @@
     <h3>Single Young Professional</h3>
       <p>[$1,000] per week</p>
   </div>
+<div><a id="<%=  %>renting"></div>
 </div>
+
 <!-- Cost of living block END -->
 
 <!-- Renting in suburb block -->
@@ -178,6 +184,7 @@
     </div>
 
   </div>
+<div><a id="<%=  %>entertainment"></div>
 </div>
 <!-- Renting in suburb block END -->
 
@@ -191,12 +198,13 @@
   <div class="entertainment_image">
     <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> entertainment image">
   </div>
+<div><a id="transport"></div>
 </div>
 <!-- Entertainment text/image block END -->
 
 <!-- Transport in suburb block -->
 <div class="show_transport">
-  <div class="transport_description">
+  <div class="transport_description" >
     <h2>Transport in <%= @suburb.name %></h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
@@ -229,6 +237,7 @@
 <!-- Transport in suburb block END -->
 
 <!-- Amenities w/ Map block -->
+<a id="amenities">
 <div class="show_amenities">
   <div class="amenities_description">
     <h2>Amenities</h2>
