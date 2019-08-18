@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   root :to => 'suburbs#index'
   resources :suburbs
 
+  get '/about' => 'map#about', as: "about"
+
 end

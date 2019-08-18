@@ -16,8 +16,8 @@ description: "Bondi Beach is a popular beach and the name of the surrounding sub
 image_url: "http://cdn.cnn.com/cnnnext/dam/assets/180115111824-an-bondi-beach-4.jpg",
 median_rent: 700,
 living_cost: 4,
-long: 151.275,
-lat: -33.891)
+long: 151.2758928,
+lat: -33.8923627)
 
 puts "Suburbs count: #{Suburb.all.length}"
 puts "Suburbs names: #{Suburb.all.pluck("name")}"
@@ -28,8 +28,8 @@ description: "The Sydney City Centre (also Sydney CBD, and often referred to sim
 image_url: "https://nomadsworld.com/wp-content/uploads/2017/08/sydney_opera_house_istock.jpg",
 median_rent: 790,
 living_cost: 4,
-long: 151.209,
-lat: -33.865)
+long: 151.1872784,
+lat: -33.869645)
 
 puts "Suburbs count: #{Suburb.all.length}"
 puts "Suburbs names: #{Suburb.all.pluck("name")}"
@@ -40,8 +40,8 @@ description: "Manly is a beach-side suburb of northern Sydney, in the state of N
 image_url: "https://nomadsworld.com/wp-content/uploads/2017/08/sydney_manly_beach_istock.jpg",
 median_rent: 750,
 living_cost: 4,
-long: 151.286,
-lat: -33.798)
+long: 151.2846034,
+lat: -33.7964693)
 
 puts "Suburbs count: #{Suburb.all.length}"
 puts "Suburbs names: #{Suburb.all.pluck("name")}"
@@ -53,8 +53,8 @@ Broadway is a locality around the road of the same name, which is located on the
 image_url: "https://media.concreteplayground.com/content/uploads/2017/05/Pyrmont-Festival.jpeg",
 median_rent: 600,
 living_cost: 4,
-long: 151.197,
-lat: -33.878)
+long: 151.1940736,
+lat: -33.8794803)
 
 puts "Suburbs count: #{Suburb.all.length}"
 puts "Suburbs names: #{Suburb.all.pluck("name")}"
@@ -65,8 +65,8 @@ description: "Newtown, a suburb of the Sydney inner west, is located approximate
 image_url: "https://media.concreteplayground.com/content/uploads/2018/01/newtown-street-art-destination-nsw-supplied.jpg",
 median_rent: 460,
 living_cost: 3,
-long: 151.180,
-lat: -33.897)
+long: 151.1714736,
+lat: -33.8998891)
 
 puts "Suburbs count: #{Suburb.all.length}"
 puts "Suburbs names: #{Suburb.all.pluck("name")}"
