@@ -1,0 +1,29 @@
+// Place all the styles related to the Suburbs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// -- Features NavBar -- //
+.features_navbar {
+  background-color: #3941bd;
+  height: 55px;
+  padding: 20px;
+  padding-top: 14px;
+}
+
+.features_navbar a {
+  color: white;
+}
+
+.features_navbar a:hover {
+text-decoration: none;
+padding-bottom: 7px;
+border-bottom: solid 3px white;
+}
+
+.active_underline {
+  padding-bottom: 7px;
+  border-bottom: solid 3px white;
+}
+
+
+// -- Features NavBar END -- //
