@@ -1,11 +1,8 @@
 development:
-  api_key: 'AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw
-'
+  api_key: 'AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
 
 production:
-  api_key: 'AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw
-'
+  api_key: 'AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
 
 test:
-  api_key: 'AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw
-'
+  api_key: 'AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
