@@ -45,6 +45,15 @@
 
       <!-- Distance slider -->
 
+      <!-- Constant for Sydney -->
+<script>
+
+
+</script>
+
+
+
+
       <div class="slidecontainer">
         <h6>Search Radius</h6>
         <input type="range" min="1" max="200" value="50" class="custom-range" id="radiusRange">
@@ -60,6 +69,8 @@
           radiusOutput.innerHTML = this.value;
         }
       </script>
+
+
 
       <div class="dropdown-divider"></div>
 
@@ -101,7 +112,10 @@
         rentSlider.oninput = function() {
           rentOutput.innerHTML = this.value;
         }
+        console.log(demo2);
       </script>
+
+
 
       <div class="dropdown-divider"></div>
 
@@ -139,6 +153,36 @@
   <!-- Filter Section END -->
 
   <!-- Suburbs Cards  -->
+
+<!--
+https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=
+sydney
+&destinations=
+-33.857762,20151.220273
+&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw
+-->
+
+
+<!-- Non functioning Google computeDistanceBetween function
+
+<script>
+  function  getDistance (lat ,long) {
+    let _kCord = new google.maps.LatLng(-33.857762, 151.220273);
+    var _pCord = new google.maps.LatLng(lat, long);
+    let dist = google.maps.geometry.spherical.computeDistanceBetween (_kCord, _pCord);
+    console.log(lat, long, dist);
+    return dist;
+  };
+
+  <% @suburb.each do |suburb| %>
+  var d = getDistance(<%= suburb.long %>, <%= suburb.lat %>);
+  console.log(d);
+  <% end %>
+
+</script>
+
+-->
+
   <div class="suburbs_cardholder">
     <div class="suburb_card">
       <% @suburb.each do |suburb| %>
@@ -161,4 +205,5 @@
   </div>
   <!-- Suburbs Cards END  -->
 </div>
+
 <!-- Main Body END -->
