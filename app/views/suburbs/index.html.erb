@@ -28,7 +28,45 @@
   <!-- Filter Section  -->
   <div class="filter_card">
     <h6>Central Location/s</h6>
-      <input class="form-control" type="text" placeholder="Manly">
+
+    <form id="search">
+      <input class="form-control" id="query" type="search" placeholder="Manly">
+      <!-- <input type="submit" id="button">
+      <!-- <button type="button" id="find" name="button">button </button> -->
+    </form>
+
+    <script>
+
+    console.log("test");
+
+    $(document).ready(function(){
+      $("#search").submit(function(e){
+        e.preventDefault();
+        var centerLocation = $('#query').val();
+        console.log(centerLocation)
+        console.log("clicked");
+        const generateURL = [
+          'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=',
+          centerLocation,
+          '&destinations=',
+          <%= @suburb[0].lat %>,
+          ',',
+          <%= @suburb[0].long %>,
+          '&key=LUDOS API KEY'
+            ].join('');
+            console.log(generateURL);
+
+      });
+
+    });
+
+
+
+
+
+
+
+    </script>
 
       <%# <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -153,32 +191,7 @@
 
   <!-- Suburbs Cards  -->
 
-<!--
-https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=
-sydney
-&destinations=
--33.857762,20151.220273
-&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw
--->
 
-
-<!-- Non functioning Google computeDistanceBetween function
-
-<script>
-  function  getDistance (lat ,long) {
-    let _kCord = new google.maps.LatLng(-33.857762, 151.220273);
-    var _pCord = new google.maps.LatLng(lat, long);
-    let dist = google.maps.geometry.spherical.computeDistanceBetween (_kCord, _pCord);
-    console.log(lat, long, dist);
-    return dist;
-  };
-
-  <% @suburb.each do |suburb| %>
-  var d = getDistance(<%= suburb.long %>, <%= suburb.lat %>);
-  console.log(d);
-  <% end %>
-
-</script>
 
 -->
 
