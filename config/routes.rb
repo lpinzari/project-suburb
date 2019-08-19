@@ -12,7 +12,7 @@
 #             DELETE /suburbs/:id(.:format)      suburbs#destroy
 
 Rails.application.routes.draw do
-  root :to => 'suburbs#index'
+  root :to => 'suburbs#welcome'
   resources :suburbs
 
 end
