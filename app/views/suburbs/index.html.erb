@@ -1,3 +1,4 @@
+<!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
   <a class="navbar-brand" href="#">Loco</a>
@@ -10,22 +11,86 @@
         <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">Suburbs</a>
+        <a class="nav-link active" href="<%= suburbs_path %>">Suburbs</a>
       </li>
     </ul>
   </div>
 </nav>
+<!-- NavBar END -->
 
+<!-- Header -->
 <h1 class="text_align suburbs_head_h">Sydney Suburbs Guide!</h1>
 <p class="text_align suburbs_head_p">Find me in app/views/suburbs/index.html.erb</p>
+<!-- Header END -->
 
+<!-- Main Body -->
 <div class="content_body">
+  <!-- Filter Section Fixed  -->
   <div class="filter_card">
+    <h6>Central Location/s</h6>
+      <input class="form-control" type="text" placeholder="Manly">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Sydney CBD</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Bondi Beach</label>
+      </div>
+      <label for="customRange2">Max Radius x km</label>
+      <p>0 km<input type="range" class="custom-range" min="0" max="5" id="customRange2">100 km</p>
+      <div class="dropdown-divider"></div>
 
-  </div>
+    <h6>Population Type</h6>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Families</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Young Professionals</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Retirees</label>
+      </div>
+      <div class="dropdown-divider"></div>
+
+    <h6>Average cost of rent</h6>
+      <label for="customRange1">Max $x per week</label>
+      <p>$100<input type="range" class="custom-range" id="customRange1">$5,000</p>
+      <div class="dropdown-divider"></div>
+
+    <h6>Cost of living</h6>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary">$</button>
+      <button type="button" class="btn btn-secondary">$$</button>
+      <button type="button" class="btn btn-secondary">$$$</button>
+      <button type="button" class="btn btn-secondary">$$$$</button>
+      </div>
+      <div class="dropdown-divider"></div>
+
+    <h6>Atmosphere</h6>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Quiet and serene</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Bustling and active</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Party central</label>
+      </div>
+</div>
+  <!-- Filter Section Fixed END -->
+
+  <!-- Suburbs Cards  -->
   <div class="suburbs_cardholder">
     <div class="suburb_card">
       <% @suburb.each do |suburb| %>
+      <a href="<%= suburb_path(suburb.id) %>" class="suburb_card_link">
       <div class="card suburb_card2" style="width: 18rem;">
         <img src="<%= suburb.image_url %>" class="card-img-top" alt="image of <%= suburb.name %>">
         <div class="card-body text_align">
@@ -35,11 +100,13 @@
           <p class="card-text"><%= suburb.living_cost %></p>
           <p class="card-text"><%= suburb.long %></p>
           <p class="card-text"><%= suburb.lat %></p> -->
-          <a href="<%= suburb_path(suburb.id) %>" class="btn btn-outline-primary suburb_card_button">See guide</a>
+
         </div>
       </div>
+      </a>
       <% end %>
     </div>
+  </div>
+  <!-- Suburbs Cards END  -->
 </div>
-
-</div>
+<!-- Main Body END -->
