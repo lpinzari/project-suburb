@@ -52,9 +52,58 @@
           <%= @suburb[0].lat %>,
           ',',
           <%= @suburb[0].long %>,
-          '&key=LUDOS API KEY'
+          '&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
             ].join('');
-            console.log(generateURL);
+        console.log(generateURL);
+
+        $.ajax({
+            url : generateURL,
+            type: 'GET',
+            success : function(data){
+            console.log("Request done");
+            }
+        });
+
+
+        // var geo = [];
+        // var geocoder = new google.maps.Geocoder();
+        // geo = geocodeAddress(geocoder, centerLocation);
+        // console.log(geo)
+
+      //   function geocodeAddress(geocoder, address) {
+      //   geocoder.geocode({'address': address}, function(results, status) {
+      //     if (status === 'OK') {
+      //       long = parseFloat(results[0].geometry.location.lat().toString());
+      //       lat = parseFloat(results[0].geometry.location.lng().toString());
+      //       console.log(long);
+      //       console.log(lat);
+      //       return [lat,long];
+      //     } else {
+      //       alert('Geocode was not successful for the following reason: ' + status);
+      //     }
+      //   });
+      // }
+      // end geocoding location
+
+      // Define two points using LatLng objects
+
+      // var point_a = new google.maps.LatLng( <%= @suburb[0].lat %>, <%= @suburb[0].long %>);
+      // var point_b = new google.maps.LatLng( lat, long );
+
+      // console.log(point_a);
+      // console.log(point_b);
+      // Get the distance between the two points in miles
+      // var distance_meters = getDistanceInMeters( point_a, point_b );
+
+      // Show the distance, rounded to 2 decimals
+      // console.log( "The distance between point_a and point_b is: \n\n" + distance_meters + " meters" );
+
+      // The API returns distance in meters.
+      // function getDistanceInMeters( point_a, point_b ) {
+	    //   var distance_in_miles = google.maps.geometry.spherical.computeDistanceBetween( point_a, point_b );
+	    //   return (distance_in_miles*1609.344)/1000; // convert miles to meters
+      // }
+
 
       });
 
@@ -85,7 +134,7 @@
 
       <!-- Constant for Sydney -->
 
-      <input id="get-center" type="button" value="Go">
+
 
 
 
