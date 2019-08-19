@@ -1,4 +1,7 @@
 class SuburbsController < ApplicationController
+  def welcome
+  end
+
   def index
     @suburb = Suburb.all
   end

@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="<%= suburbs_path %>">Suburbs</a>
@@ -25,36 +25,50 @@
 
 <!-- Main Body -->
 <div class="content_body">
-  <!-- Filter Section Fixed  -->
+  <!-- Filter Section  -->
   <div class="filter_card">
     <h6>Central Location/s</h6>
       <input class="form-control" type="text" placeholder="Manly">
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Sydney CBD</label>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Sydney CBD
+        </label>
       </div>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Bondi Beach</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Bondi Beach
+        </label>
       </div>
+      <div>
       <label for="customRange2">Max Radius x km</label>
       <p>0 km<input type="range" class="custom-range" min="0" max="5" id="customRange2">100 km</p>
-      <div class="dropdown-divider"></div>
+      </div>
+    <div class="dropdown-divider"></div>
+
 
     <h6>Population Type</h6>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Families</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Families
+        </label>
       </div>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Young Professionals</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Young Professionals
+        </label>
       </div>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Retirees</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Retirees
+        </label>
       </div>
-      <div class="dropdown-divider"></div>
+    <div class="dropdown-divider"></div>
 
     <h6>Average cost of rent</h6>
       <label for="customRange1">Max $x per week</label>
@@ -71,20 +85,27 @@
       <div class="dropdown-divider"></div>
 
     <h6>Atmosphere</h6>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Quiet and serene</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Quiet and serene
+        </label>
       </div>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Bustling and active</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Bustling and active
+        </label>
       </div>
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-        <label class="custom-control-label" for="customCheck1">Party central</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Party central
+        </label>
       </div>
+
 </div>
-  <!-- Filter Section Fixed END -->
+  <!-- Filter Section END -->
 
   <!-- Suburbs Cards  -->
   <div class="suburbs_cardholder">
