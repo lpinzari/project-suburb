@@ -47,17 +47,17 @@
 
       <div class="slidecontainer">
         <h6>Search Radius</h6>
-        <input type="range" min="1" max="200" value="50" class="custom-range" id="customRange2">
+        <input type="range" min="1" max="200" value="50" class="custom-range" id="radiusRange">
         <p>Distance: <span id="demo"></span>km</p>
       </div>
 
       <script>
-        var slider = document.getElementById("customRange2");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+        let radiusSlider = document.getElementById("radiusRange");
+        let radiusOutput = document.getElementById("demo");
+        radiusOutput.innerHTML = radiusSlider.value;
 
-        slider.oninput = function() {
-          output.innerHTML = this.value;
+        radiusSlider.oninput = function() {
+          radiusOutput.innerHTML = this.value;
         }
       </script>
 
@@ -85,10 +85,26 @@
       </div>
     <div class="dropdown-divider"></div>
 
-    <h6>Average cost of rent</h6>
-      <label for="customRange1">Max $x per week</label>
-      <p>$100<input type="range" class="custom-range" id="customRange1">$5,000</p>
+      <!-- Average rent slider -->
+
+      <div class="slidecontainer">
+        <h6>Median rent</h6>
+        <input type="range" min="100" max="2000" value="500" class="custom-range" id="rentRange">
+        <p>$<span id="demo2"></span> per week</p>
+      </div>
+
+      <script>
+        let rentSlider = document.getElementById("rentRange");
+        let rentOutput = document.getElementById("demo2");
+        rentOutput.innerHTML = rentSlider.value;
+
+        rentSlider.oninput = function() {
+          rentOutput.innerHTML = this.value;
+        }
+      </script>
+
       <div class="dropdown-divider"></div>
+
 
     <h6>Cost of living</h6>
       <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
