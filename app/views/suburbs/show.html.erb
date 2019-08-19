@@ -311,8 +311,7 @@
     });
 </script>
 
-<h1>Suburbs#show</h1>
-<p>Find me in app/views/suburbs/show.html.erb</p>
+
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -323,7 +322,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%= suburbs_path %>">Suburbs</a>
@@ -374,6 +373,9 @@
 <!-- Secondary Nav -->
 <div class="show_secondary_nav sticky-top features_navbar">
   <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="font-weight-light" href="<%= suburbs_path %>">Go Back |</a>
+    </li>
     <li class="nav-item">
       <a href="#summary">Summary</a>
       <!-- class="active_underline"  -->
@@ -547,13 +549,12 @@
         <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
       </div>
     </div>
-
   </div>
+<div><a id="amenities"></div>
 </div>
 <!-- Transport in suburb block END -->
 
 <!-- Amenities w/ Map block -->
-<a id="amenities">
 <div class="show_amenities">
   <div class="amenities_description">
     <h2>Amenities</h2>
@@ -571,14 +572,13 @@
     </ul>
   </div>
 
-  <div>
+  <div class="amenities_mapping">
     <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
-    <div>
+    <div class="map_interface">
           <span class="text">Search for nearby places</span>
           <input id="places-search" type="text" placeholder="Ex: Trains">
           <input id="go-places" type="button" value="Go">
     </div>
-    <hr>
     <div id="map"></div>
   </div>
 </div>

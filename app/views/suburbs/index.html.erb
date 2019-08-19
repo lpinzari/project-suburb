@@ -30,7 +30,7 @@
     <h6>Central Location/s</h6>
       <input class="form-control" type="text" placeholder="Manly">
 
-      <div class="form-check">
+      <%# <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
         <label class="form-check-label" for="defaultCheck1">
           Sydney CBD
@@ -41,12 +41,27 @@
         <label class="form-check-label" for="defaultCheck1">
           Bondi Beach
         </label>
+      </div> %>
+
+      <!-- Distance slider -->
+
+      <div class="slidecontainer">
+        <h6>Search Radius</h6>
+        <input type="range" min="1" max="200" value="50" class="custom-range" id="customRange2">
+        <p>Distance: <span id="demo"></span>km</p>
       </div>
-      <div>
-      <label for="customRange2">Max Radius x km</label>
-      <p>0 km<input type="range" class="custom-range" min="0" max="5" id="customRange2">100 km</p>
-      </div>
-    <div class="dropdown-divider"></div>
+
+      <script>
+        var slider = document.getElementById("customRange2");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+      </script>
+
+      <div class="dropdown-divider"></div>
 
 
     <h6>Population Type</h6>
