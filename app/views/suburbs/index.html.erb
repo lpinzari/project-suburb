@@ -1,3 +1,5 @@
+
+
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -38,84 +40,79 @@
     <script>
 
     console.log("test");
-
+    var newSearch = false;
     $(document).ready(function(){
+      var filtered = [];
       $("#search").submit(function(e){
         e.preventDefault();
         var centerLocation = $('#query').val();
-        console.log(centerLocation)
-        console.log("clicked");
-        const generateURL = [
-          'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=',
-          centerLocation,
-          '&destinations=',
-          <%= @suburb[0].lat %>,
-          ',',
-          <%= @suburb[0].long %>,
-          '&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
-            ].join('');
-        console.log(generateURL);
 
-        $.ajax({
-            url : generateURL,
-            type: 'GET',
-            success : function(data){
-            console.log("Request done");
+        <% @suburb.each do |suburb| %>
+
+
+        var latitude = 0;
+        var longitude = 0;
+        var rent = 0;
+        var costOfLiving = 0;
+
+        var suburbName = <%= suburb.id %>;
+        var geocoder = new google.maps.Geocoder();
+        latitude = <%= suburb.lat %>;
+        longitude = <%= suburb.long %>;
+        rent = <%= suburb.median_rent %>;
+        costOfLiving = <%= suburb.living_cost %>;
+
+        console.log(suburbName);
+
+        renderSuburbs(geocoder, centerLocation, latitude, longitude, suburbName, rent, costOfLiving );
+
+        function renderSuburbs(geocoder, address, latitude, longitude, suburbName, rent, costOfLiving) {
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            long = parseFloat(results[0].geometry.location.lng().toString());
+            lat = parseFloat(results[0].geometry.location.lat().toString());
+            var userloc = new google.maps.LatLng(lat, long);
+            var suburbloc = new google.maps.LatLng( latitude, longitude);
+            var distance_in_km = (google.maps.geometry.spherical.computeDistanceBetween( userloc, suburbloc )/1000).toFixed(2);
+            let radius = document.getElementById("radiusRange").value;
+            radius = parseInt(radius);
+            let rentRange = document.getElementById("rentRange").value;
+
+            console.log(suburbName);
+            console.log("Radius:" + radius);
+            console.log("Distance:" + distance_in_km);
+
+            if (distance_in_km <= radius && rent <= rentRange) {
+                 console.log("Selected suburb");
+                 console.log("--------");
+                 var container = document.getElementsByClassName("suburbs_cardholder");
+                 let i = parseInt(suburbName);
+                 var p = container[0].firstElementChild.children[i-1];
+                 p.style.display="inline-block";
+            } else {
+                var container = document.getElementsByClassName("suburbs_cardholder");
+                console.log(container);
+                let i = parseInt(suburbName);
+                var p = container[0].firstElementChild.children[i-1];
+                console.log(p);
+                p.style.display="none";
             }
+
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
         });
-
-
-        // var geo = [];
-        // var geocoder = new google.maps.Geocoder();
-        // geo = geocodeAddress(geocoder, centerLocation);
-        // console.log(geo)
-
-      //   function geocodeAddress(geocoder, address) {
-      //   geocoder.geocode({'address': address}, function(results, status) {
-      //     if (status === 'OK') {
-      //       long = parseFloat(results[0].geometry.location.lat().toString());
-      //       lat = parseFloat(results[0].geometry.location.lng().toString());
-      //       console.log(long);
-      //       console.log(lat);
-      //       return [lat,long];
-      //     } else {
-      //       alert('Geocode was not successful for the following reason: ' + status);
-      //     }
-      //   });
-      // }
+      }
       // end geocoding location
+      <% end %>
+      console.log(filtered);
+      newSearch = true;
 
-      // Define two points using LatLng objects
-
-      // var point_a = new google.maps.LatLng( <%= @suburb[0].lat %>, <%= @suburb[0].long %>);
-      // var point_b = new google.maps.LatLng( lat, long );
-
-      // console.log(point_a);
-      // console.log(point_b);
-      // Get the distance between the two points in miles
-      // var distance_meters = getDistanceInMeters( point_a, point_b );
-
-      // Show the distance, rounded to 2 decimals
-      // console.log( "The distance between point_a and point_b is: \n\n" + distance_meters + " meters" );
-
-      // The API returns distance in meters.
-      // function getDistanceInMeters( point_a, point_b ) {
-	    //   var distance_in_miles = google.maps.geometry.spherical.computeDistanceBetween( point_a, point_b );
-	    //   return (distance_in_miles*1609.344)/1000; // convert miles to meters
-      // }
-
-
-      });
+    });// end
 
     });
+</script>
 
-
-
-
-
-
-
-    </script>
 
       <%# <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -208,10 +205,10 @@
 
     <h6>Cost of living</h6>
       <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">$</button>
-      <button type="button" class="btn btn-secondary">$$</button>
-      <button type="button" class="btn btn-secondary">$$$</button>
-      <button type="button" class="btn btn-secondary">$$$$</button>
+        <button type="button" class="btn btn-secondary">$</button>
+        <button type="button" class="btn btn-secondary">$$</button>
+        <button type="button" class="btn btn-secondary">$$$</button>
+        <button type="button" class="btn btn-secondary">$$$$</button>
       </div>
       <div class="dropdown-divider"></div>
 
@@ -235,6 +232,8 @@
         </label>
       </div>
 
+      <button id="submitForm">Submit</button>
+
 </div>
   <!-- Filter Section END -->
 
@@ -243,7 +242,6 @@
 
 
 -->
-
   <div class="suburbs_cardholder">
     <div class="suburb_card">
       <% @suburb.each do |suburb| %>
