@@ -52,12 +52,18 @@
           <%= @suburb[0].lat %>,
           ',',
           <%= @suburb[0].long %>,
-          '&key=LUDOS API KEY'
+          '&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
             ].join('');
             console.log(generateURL);
 
+            $.ajax({
+                   url : generateURL,
+                   type: 'GET',
+                   success : function(data){
+                   console.log("Request done");
+                   }
+               });
       });
-
     });
 
 
@@ -187,7 +193,173 @@
         </label>
       </div>
 
+
+<div class="dropdown-divider"></div>
+<h6>Amenities</h6>
+
+<!-- Public Transport Routes -->
+<p>Public transport routes</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
 </div>
+
+<label><input type="radio" name="gender" value="male">Male</label>
+<label><input type="radio" name="gender" value="female">Female</label>
+<input type="button" value="Get Value">
+
+<script>
+
+  $(document).ready(function(){
+          $("input[type='button']").click(function(){
+          	var radioValue = $("input[name='gender']:checked").val();
+              if(radioValue){
+                  alert("Your are a - " + radioValue);
+              }
+          });
+
+      });
+
+
+
+$('#btn-group').click(function() {
+   if($('#option1').is(':checked')) { console.log("it's checked"); }
+});
+
+
+$("#submit").click(() => {
+  const val = $('input[name=q12_3]:checked').val();
+  alert(val);
+
+  <input type="button" value="Get Value">
+});
+</script>
+
+<!-- Shopping areas -->
+<p>Shopping areas</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Parks -->
+<p>Parks</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Beaches -->
+<p>Beaches</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Schools -->
+<p>Schools</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Medical Facilities -->
+<p>Medical Facilities</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+
+<div class="dropdown-divider"></div>
+<h6>Entertainment</h6>
+
+<!-- Bars and pubs -->
+<p>Bars and pubs</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Cafes -->
+<p>Cafes</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Restaurants -->
+<p>Restaurants</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+</div>
+
   <!-- Filter Section END -->
 
   <!-- Suburbs Cards  -->

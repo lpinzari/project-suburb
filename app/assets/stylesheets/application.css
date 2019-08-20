@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.btn-secondary {
+  font-size: 0.6rem;
+}
