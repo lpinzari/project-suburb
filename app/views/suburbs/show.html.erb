@@ -455,22 +455,22 @@ def show
       <!-- class="active_underline"  -->
     </li>
     <li class="nav-item">
+      <a href="#amenities">Amenities</a>
+    </li>
+    <li class="nav-item">
+      <a href="#renting">Renting in <%= @suburb.name %></a>
+    </li>
+    <li class="nav-item">
+      <a href="#transport">Transport</a>
+    </li>
+    <li class="nav-item">
       <a href="#lifestyle">Lifestyle</a>
     </li>
     <li class="nav-item">
       <a href="#living_cost">Cost of Living</a>
     </li>
     <li class="nav-item">
-      <a href="#renting">Renting in <%= @suburb.name %></a>
-    </li>
-    <li class="nav-item">
       <a href="#entertainment">Entertainment</a>
-    </li>
-    <li class="nav-item">
-      <a href="#transport">Transport</a>
-    </li>
-    <li class="nav-item">
-      <a href="#amenities">Amenities</a>
     </li>
   </ul>
 <div><a id="summary"></div>
@@ -485,7 +485,7 @@ def show
     <p><%= @suburb.description %></p>
   </div>
 
-  <!-- Gallery -->
+  <!-- Suburb Gallery -->
   <div class="suburb_gallery">
       <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image one">
       <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image two">
@@ -494,44 +494,41 @@ def show
       <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image five">
       <img src="<%= @suburb.image_url %>" class="" style="width: 18rem;" alt="<%= @suburb.name %> gallery image six">
   </div>
-<div><a id="<%=  %>lifestyle"></div>
+<div><a id="amenities"></div>
 </div>
 
 <!-- Summary block END -->
 
-<!-- Lifestyle text/image block -->
-<div class="show_lifestyle">
-  <div class="lifestyle_description">
-    <h2>Lifestyle</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+<!-- Amenities w/ Map block -->
+<div class="show_amenities">
+  <div class="amenities_description">
+    <h2>Amenities</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur perferendis dolor consequuntur nemo dolores temporibus, sed neque at corrupti ducimus quisquam natus quaerat sunt, rem debitis ad architecto nulla officia.</p>
+    <h3>Filter Map</h3>
+    <ul>
+      <li>Train station</li>
+      <li>Bus route</li>
+      <li>Park</li>
+      <li>Beach</li>
+      <li>Shopping area</li>
+      <li>School</li>
+      <li>Medical facility</li>
+      <li>University</li>
+    </ul>
   </div>
-  <div class="lifestyle_image">
-    <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> lifestyle image">
-  </div>
-<div><a id="<%=  %>living_cost"></div>
-</div>
-<!-- Lifestyle block END -->
 
-<!-- Cost of living block -->
-<div class="show_living_cost">
-  <div class="living_cost_description">
-    <h2>Cost of living</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, architecto, voluptas rem quos at voluptatibus ducimus nemo quae dolorem veritatis non, accusantium porro dolore! Facere placeat quam, iure reiciendis dolorem.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, architecto, voluptas rem quos at voluptatibus ducimus nemo quae dolorem veritatis non, accusantium porro dolore! Facere placeat quam, iure reiciendis dolorem.</p>
+  <div class="amenities_mapping">
+    <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
+    <div class="map_interface">
+          <span class="text">Search for nearby places</span>
+          <input id="places-search" type="text" placeholder="Ex: Trains">
+          <input id="go-places" type="button" value="Go">
+    </div>
+    <div id="map"></div>
   </div>
-  <div class="living_cost_breakdown">
-    <h3>Family of four</h3>
-      <p>[$1,400] per week</p>
-    <h3>Couple</h3>
-      <p>[$1,300] per week</p>
-    <h3>Single Young Professional</h3>
-      <p>[$1,000] per week</p>
-  </div>
-<div><a id="<%=  %>renting"></div>
+  <div><a id="renting"></div>
 </div>
-
-<!-- Cost of living block END -->
+<!-- Amenities w/ Map block END -->
 
 <!-- Renting in suburb block -->
 <div class="show_renting">
@@ -574,30 +571,44 @@ def show
         <p><b>20 available</b></p>
       </div>
     </div>
-
   </div>
-<div><a id="<%=  %>entertainment"></div>
+<div>
+<div class="property_gallery">
+  <!--  Property Gallery -->
+  <h5> Recommended properties <span class="sponsor">- Brought to you by <span class="domain_color">Domain</span></h5></span>
+  <div class="card-deck">
+  <div class="card">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">5 🛏️ 2 🛀 2 🚘</h5>
+      <p class="card-text text-muted">123 Fake Street</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">3 🛏️ 3 🛀 2 🚘</h5>
+      <p class="card-text text-muted">241 Real Street</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">2 🛏️ 1 🛀 1 🚘</h5>
+      <p class="card-text text-muted">322 Porter Street</p>
+    </div>
+  </div>
+</div>
+  <!--  Property Gallery -->
+</div>
+  <a id="<%=  %>transport"></div>
 </div>
 <!-- Renting in suburb block END -->
-
-<!-- Entertainment text/image block -->
-<div class="show_entertainment">
-  <div class="entertainment_description">
-    <h2>Entertainment</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
-  </div>
-  <div class="entertainment_image">
-    <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> entertainment image">
-  </div>
-<div><a id="transport"></div>
-</div>
-<!-- Entertainment text/image block END -->
 
 <!-- Transport in suburb block -->
 <div class="show_transport">
   <div class="transport_description" >
-    <h2>Transport in <%= @suburb.name %></h2>
+    <h2>Access to public transport</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aut numquam cumque voluptas! Ab quod suscipit distinctio odio asperiores praesentium facere numquam, accusamus corrupti, id quasi, labore quos animi nisi.</p>
   </div>
@@ -624,35 +635,53 @@ def show
       </div>
     </div>
   </div>
-<div><a id="amenities"></div>
+<div><a id="lifestyle"></div>
 </div>
 <!-- Transport in suburb block END -->
 
-<!-- Amenities w/ Map block -->
-<div class="show_amenities">
-  <div class="amenities_description">
-    <h2>Amenities</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur perferendis dolor consequuntur nemo dolores temporibus, sed neque at corrupti ducimus quisquam natus quaerat sunt, rem debitis ad architecto nulla officia.</p>
-    <h3>Filter Map</h3>
-    <ul>
-      <li>Train station</li>
-      <li>Bus route</li>
-      <li>Park</li>
-      <li>Beach</li>
-      <li>Shopping area</li>
-      <li>School</li>
-      <li>Medical facility</li>
-      <li>University</li>
-    </ul>
+<!-- Lifestyle text/image block -->
+<div class="show_lifestyle">
+  <div class="lifestyle_description">
+    <h2>Lifestyle</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
   </div>
+  <div class="lifestyle_image">
+    <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> lifestyle image">
+  </div>
+<div><a id="living_cost"></div>
+</div>
+<!-- Lifestyle block END -->
 
-  <div class="amenities_mapping">
-    <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
-    <div class="map_interface">
-          <span class="text">Search for nearby places</span>
-          <input id="places-search" type="text" placeholder="Ex: Trains">
-          <input id="go-places" type="button" value="Go">
-    </div>
-    <div id="map"></div>
+<!-- Cost of living block -->
+<div class="show_living_cost">
+  <div class="living_cost_description">
+    <h2>Cost of living</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, architecto, voluptas rem quos at voluptatibus ducimus nemo quae dolorem veritatis non, accusantium porro dolore! Facere placeat quam, iure reiciendis dolorem.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, architecto, voluptas rem quos at voluptatibus ducimus nemo quae dolorem veritatis non, accusantium porro dolore! Facere placeat quam, iure reiciendis dolorem.</p>
+  </div>
+  <div class="living_cost_breakdown">
+    <h3>Family of four</h3>
+      <p>[$1,400] per week</p>
+    <h3>Couple</h3>
+      <p>[$1,300] per week</p>
+    <h3>Single Young Professional</h3>
+      <p>[$1,000] per week</p>
+  </div>
+<!-- anchor link for secondary nav -->
+<div><a id="entertainment"></div>
+</div>
+<!-- Cost of living block END -->
+
+<!-- Entertainment text/image block -->
+<div class="show_entertainment">
+  <div class="entertainment_description">
+    <h2>Entertainment</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet, dolores soluta! Beatae quod asperiores quo sequi quam, vero voluptatem deserunt. Officiis repudiandae velit, ea numquam beatae! Aut, eum, eos.</p>
+  </div>
+  <div class="entertainment_image">
+    <img src="<%= @suburb.image_url %>" class="" style="width: 35rem;" alt="<%= @suburb.name %> entertainment image">
   </div>
 </div>
+<!-- Entertainment text/image block END -->
