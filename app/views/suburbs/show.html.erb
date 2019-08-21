@@ -243,29 +243,31 @@ def show
       }
 
       // Create a searchbox in order to execute a places search
-       var searchBox = new google.maps.places.SearchBox(
-       document.getElementById('places-search'));
+       // var searchBox = new google.maps.places.SearchBox(
+       // document.getElementById('places-search'));
 
        // Bias the searchbox to within the bounds of the map.
-      searchBox.setBounds(map.getBounds());
+      // searchBox.setBounds(map.getBounds());
 
       // Listen for the event fired when the user selects a prediction from the
       // picklist and retrieve more details for that place.
-      searchBox.addListener('places_changed', function() {
-        searchBoxPlaces(this);
-      });
+
+      // searchBox.addListener('places_changed', function() {
+      //   searchBoxPlaces(this);
+      // });
 
       // This function fires when the user selects a searchbox picklist item.
       // It will do a nearby search using the selected query string or place.
-      function searchBoxPlaces(searchBox) {
-        hideMarkers(placeMarkers);
-        var places = searchBox.getPlaces();
-        // For each place, get the icon, name and location.
-        createMarkersForPlaces(places);
-        if (places.length == 0) {
-          window.alert('We did not find any places matching that search!');
-        }
-      }
+
+      // function searchBoxPlaces(searchBox) {
+      //   hideMarkers(placeMarkers);
+      //   var places = searchBox.getPlaces();
+      //   // For each place, get the icon, name and location.
+      //   createMarkersForPlaces(places);
+      //   if (places.length == 0) {
+      //     window.alert('We did not find any places matching that search!');
+      //   }
+      // }
 
       // This function firest when the user select "go" on the places search.
       // It will do a nearby search using the entered query string or place.
@@ -275,8 +277,9 @@ def show
         var placesService = new google.maps.places.PlacesService(map);
         var locDomQuery = document.getElementsByClassName("suburb_description");
         var locationQuery = locDomQuery[0].firstElementChild.innerText;
-        var qSearch = document.getElementById('places-search').value;
-        var finalQuery = qSearch + " near by " + locationQuery;
+        // var qSearch = document.getElementById('places-search').value;
+        var test = document.getElementById('myList').value;
+        var finalQuery = test + " near by " + locationQuery;
         console.log(finalQuery);
         placesService.textSearch({
           query: finalQuery,
@@ -539,13 +542,21 @@ margin-bottom: 0;
 
   <div class="amenities_mapping">
 
-
-
-
     <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
     <div class="map_interface">
           <span class="text">Search for:</span>
-          <input id="places-search" type="text" placeholder="Ex: Trains">
+          <!-- <input id="places-search" type="text" placeholder="Ex: Trains"> -->
+          <select id = "myList">
+            <option value = "Train Station">Train Station</option>
+            <option value = "Bus Station">Bus Station</option>
+            <option value = "Parks">Parks</option>
+            <option value = "Beaches">Beaches</option>
+            <option value = "Shopping">Shopping</option>
+            <option value = "School">School</option>
+            <option value = "Cafes">Cafes</option>
+            <option value = "Pubs">Pubs</option>
+            <option value = "Hospital">Hospital</option>
+          </select>
           <input id="go-places" type="button" value="Go">
     </div>
     <div id="map"></div>
