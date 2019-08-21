@@ -273,8 +273,13 @@ def show
         var bounds = map.getBounds();
         hideMarkers(placeMarkers);
         var placesService = new google.maps.places.PlacesService(map);
+        var locDomQuery = document.getElementsByClassName("suburb_description");
+        var locationQuery = locDomQuery[0].firstElementChild.innerText;
+        var qSearch = document.getElementById('places-search').value;
+        var finalQuery = qSearch + " near by " + locationQuery;
+        console.log(finalQuery);
         placesService.textSearch({
-          query: document.getElementById('places-search').value,
+          query: finalQuery,
           bounds: bounds
         }, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -409,6 +414,7 @@ def show
 <!-- Header -->
 <h1 class="text_align suburbs_head_h">Living in <%= @suburb.name %></h1>
 <p class="text_align suburbs_head_p">Find me in app/views/suburbs/show.html.erb</p>
+
 <!-- Header END -->
 
 <!-- Carousel -->
@@ -517,10 +523,17 @@ def show
     </ul>
   </div>
 
+
+
+
   <div class="amenities_mapping">
+
+
+
+
     <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
     <div class="map_interface">
-          <span class="text">Search for nearby places</span>
+          <span class="text">Search for:</span>
           <input id="places-search" type="text" placeholder="Ex: Trains">
           <input id="go-places" type="button" value="Go">
     </div>
