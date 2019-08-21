@@ -1,3 +1,5 @@
+
+
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -38,8 +40,9 @@
     <script>
 
     console.log("test");
-
+    var newSearch = false;
     $(document).ready(function(){
+      var filtered = [];
       $("#search").submit(function(e){
         e.preventDefault();
         var centerLocation = $('#query').val();
@@ -52,21 +55,89 @@
           <%= @suburb[0].lat %>,
           ',',
           <%= @suburb[0].long %>,
-          '&key=LUDOS API KEY'
+          '&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
             ].join('');
             console.log(generateURL);
 
+            $.ajax({
+                   url : generateURL,
+                   type: 'GET',
+                   success : function(data){
+                   console.log("Request done");
+                   }
+               });
       });
-
     });
 
 
 
 
+        <% @suburb.each do |suburb| %>
 
 
+        var latitude = 0;
+        var longitude = 0;
+        var rent = 0;
+        var costOfLiving = 0;
 
-    </script>
+        var suburbName = <%= suburb.id %>;
+        var geocoder = new google.maps.Geocoder();
+        latitude = <%= suburb.lat %>;
+        longitude = <%= suburb.long %>;
+        rent = <%= suburb.median_rent %>;
+        costOfLiving = <%= suburb.living_cost %>;
+
+        console.log(suburbName);
+
+        renderSuburbs(geocoder, centerLocation, latitude, longitude, suburbName, rent, costOfLiving );
+
+        function renderSuburbs(geocoder, address, latitude, longitude, suburbName, rent, costOfLiving) {
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            long = parseFloat(results[0].geometry.location.lng().toString());
+            lat = parseFloat(results[0].geometry.location.lat().toString());
+            var userloc = new google.maps.LatLng(lat, long);
+            var suburbloc = new google.maps.LatLng( latitude, longitude);
+            var distance_in_km = (google.maps.geometry.spherical.computeDistanceBetween( userloc, suburbloc )/1000).toFixed(2);
+            let radius = document.getElementById("radiusRange").value;
+            radius = parseInt(radius);
+            let rentRange = document.getElementById("rentRange").value;
+
+            console.log(suburbName);
+            console.log("Radius:" + radius);
+            console.log("Distance:" + distance_in_km);
+
+            if (distance_in_km <= radius && rent <= rentRange) {
+                 console.log("Selected suburb");
+                 console.log("--------");
+                 var container = document.getElementsByClassName("suburbs_cardholder");
+                 let i = parseInt(suburbName);
+                 var p = container[0].firstElementChild.children[i-1];
+                 p.style.display="inline-block";
+            } else {
+                var container = document.getElementsByClassName("suburbs_cardholder");
+                console.log(container);
+                let i = parseInt(suburbName);
+                var p = container[0].firstElementChild.children[i-1];
+                console.log(p);
+                p.style.display="none";
+            }
+
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+      // end geocoding location
+      <% end %>
+      console.log(filtered);
+      newSearch = true;
+
+    });// end
+
+    });
+</script>
+
 
       <%# <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -84,10 +155,9 @@
       <!-- Distance slider -->
 
       <!-- Constant for Sydney -->
-<script>
 
 
-</script>
+
 
 
 
@@ -150,7 +220,6 @@
         rentSlider.oninput = function() {
           rentOutput.innerHTML = this.value;
         }
-        console.log(demo2);
       </script>
 
 
@@ -160,10 +229,10 @@
 
     <h6>Cost of living</h6>
       <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">$</button>
-      <button type="button" class="btn btn-secondary">$$</button>
-      <button type="button" class="btn btn-secondary">$$$</button>
-      <button type="button" class="btn btn-secondary">$$$$</button>
+        <button type="button" class="btn btn-secondary">$</button>
+        <button type="button" class="btn btn-secondary">$$</button>
+        <button type="button" class="btn btn-secondary">$$$</button>
+        <button type="button" class="btn btn-secondary">$$$$</button>
       </div>
       <div class="dropdown-divider"></div>
 
@@ -187,7 +256,173 @@
         </label>
       </div>
 
+
+<div class="dropdown-divider"></div>
+<h6>Amenities</h6>
+
+<!-- Public Transport Routes -->
+<p>Public transport routes</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
 </div>
+
+<label><input type="radio" name="gender" value="male">Male</label>
+<label><input type="radio" name="gender" value="female">Female</label>
+<input type="button" value="Get Value">
+
+<script>
+
+  $(document).ready(function(){
+          $("input[type='button']").click(function(){
+          	var radioValue = $("input[name='gender']:checked").val();
+              if(radioValue){
+                  alert("Your are a - " + radioValue);
+              }
+          });
+
+      });
+
+
+
+$('#btn-group').click(function() {
+   if($('#option1').is(':checked')) { console.log("it's checked"); }
+});
+
+
+$("#submit").click(() => {
+  const val = $('input[name=q12_3]:checked').val();
+  alert(val);
+
+  <input type="button" value="Get Value">
+});
+</script>
+
+<!-- Shopping areas -->
+<p>Shopping areas</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Parks -->
+<p>Parks</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Beaches -->
+<p>Beaches</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Schools -->
+<p>Schools</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Medical Facilities -->
+<p>Medical Facilities</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+
+<div class="dropdown-divider"></div>
+<h6>Entertainment</h6>
+
+<!-- Bars and pubs -->
+<p>Bars and pubs</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Cafes -->
+<p>Cafes</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+<!-- Restaurants -->
+<p>Restaurants</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
+  </label>
+</div>
+
+</div>
+
   <!-- Filter Section END -->
 
   <!-- Suburbs Cards  -->
