@@ -402,14 +402,28 @@ def show
   </div>
 </nav>
 <!-- NavBar END -->
-
+<!-- <div class="parallax"></div> -->
 <!-- Header -->
-<h1 class="text_align suburbs_head_h">Living in <%= @suburb.name %></h1>
-<p class="text_align suburbs_head_p">Find me in app/views/suburbs/show.html.erb</p>
+<!-- <h1 class="text_align suburbs_head_h">Living in <%= @suburb.name %></h1>
+<p class="text_align suburbs_head_p">Find me in app/views/suburbs/show.html.erb</p> -->
 <!-- Header END -->
-
+<style>
+.parallax {
+min-height: 600px;
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-image: url('<%= @suburb.image_url %>');
+margin-bottom: 0;
+}
+</style>
+<div class="jumbotron jumbotron-fluid parallax">
+  <div class="container">
+    <h1 class="jumbo_text"><%= @suburb.name %></h1>
+  </div>
+</div>
 <!-- Carousel -->
-<div class="show_carousel">
+<!-- <div class="show_carousel ">
   <div class="carousel">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -438,14 +452,15 @@ def show
     </a>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Carousel END -->
 
 <!-- Secondary Nav -->
 <div class="show_secondary_nav sticky-top features_navbar">
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
-      <a class="font-weight-light" href="<%= suburbs_path %>">Go Back |</a>
+
+      <a class="font-weight-light" href="<%= suburbs_path %>"><i class="fa fa-angle-left"></i> Go Back </a>
     </li>
     <li class="nav-item">
       <a href="#summary">Summary</a>
@@ -572,26 +587,38 @@ def show
 <div>
 <div class="property_gallery">
   <!--  Property Gallery -->
-  <h5> Recommended properties <span class="sponsor">- Brought to you by <span class="domain_color">Domain</span></h5></span>
+  <h5> Recommended properties <span class="sponsor text-muted">- Powered by <span class="domain_color">Domain</span></h5>
   <div class="card-deck">
   <div class="card">
     <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">5 🛏️ 2 🛀 2 🚘</h5>
+    <div class="card-body rent_specs">
+      <h5 class="card-title text_greyed">
+        <span class=specs_space>5 <i class="fa fa-bed"></i></span>
+        <span class=specs_space>3 <i class="fa fa-bath"></i></span>
+        <span class=specs_space>2 <i class="fa fa-car"></i></span>
+      </h5>
       <p class="card-text text-muted">123 Fake Street</p>
     </div>
   </div>
   <div class="card">
     <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">3 🛏️ 3 🛀 2 🚘</h5>
+    <div class="card-body rent_specs">
+      <h5 class="card-title text_greyed">
+        <span class=specs_space>3 <i class="fa fa-bed"></i></span>
+        <span class=specs_space>3 <i class="fa fa-bath"></i></span>
+        <span class=specs_space>2 <i class="fa fa-car"></i></span>
+      </h5>
       <p class="card-text text-muted">241 Real Street</p>
     </div>
   </div>
   <div class="card">
     <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">2 🛏️ 1 🛀 1 🚘</h5>
+    <div class="card-body rent_specs">
+      <h5 class="card-title text_greyed">
+        <span class=specs_space>2 <i class="fa fa-bed"></i></span>
+        <span class=specs_space>1 <i class="fa fa-bath"></i></span>
+        <span class=specs_space>1 <i class="fa fa-car"></i></span>
+      </h5>
       <p class="card-text text-muted">322 Porter Street</p>
     </div>
   </div>
@@ -612,7 +639,7 @@ def show
   <div class="transport_stats">
     <div class="transport_stats_trains">
       <div class="stats_icon">
-        <p>[Trains icon]</p>
+        <p><i class="fa fa-train fa-5x"></i></p>
       </div>
       <div class="stats_texts_transport">
         <p class="text-uppercase font-weight-light">Trains</p>
@@ -623,7 +650,7 @@ def show
 
     <div class="transport_stats_buses">
       <div class="stats_icon">
-        <p>[Bus icon]</p>
+        <p><i class="fa fa-bus fa-5x"></i></p>
       </div>
       <div class="stats_texts_transport">
         <p class="text-uppercase font-weight-light">Buses</p>

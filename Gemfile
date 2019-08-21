@@ -58,3 +58,4 @@ gem "jquery-rails"
 gem "bootstrap"
 gem "httparty"
 gem 'rails_12factor', group: :production
+gem 'font-awesome-sass', '~> 5.9.0'
