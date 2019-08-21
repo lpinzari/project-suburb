@@ -46,31 +46,6 @@
       $("#search").submit(function(e){
         e.preventDefault();
         var centerLocation = $('#query').val();
-        console.log(centerLocation)
-        console.log("clicked");
-        const generateURL = [
-          'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=',
-          centerLocation,
-          '&destinations=',
-          <%= @suburb[0].lat %>,
-          ',',
-          <%= @suburb[0].long %>,
-          '&key=AIzaSyDq4x5aUE4322H4RlzzcFMT0XBQPwvF3gw'
-            ].join('');
-            console.log(generateURL);
-
-            $.ajax({
-                   url : generateURL,
-                   type: 'GET',
-                   success : function(data){
-                   console.log("Request done");
-                   }
-               });
-      });
-    });
-
-
-
 
         <% @suburb.each do |suburb| %>
 

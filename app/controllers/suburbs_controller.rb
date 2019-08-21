@@ -12,4 +12,8 @@ class SuburbsController < ApplicationController
   def edit
   end
 
-end  
+  def show
+    @suburb = Suburb.find params[:id]
+  end
+
+end
