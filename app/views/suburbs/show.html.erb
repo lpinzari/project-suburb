@@ -288,6 +288,7 @@ def show
         var bounds = new google.maps.LatLngBounds();
         for (var i = 0; i < places.length; i++) {
           var place = places[i];
+          console.log(place);
           var icon = {
             url: place.icon,
             size: new google.maps.Size(35, 35),
@@ -322,14 +323,16 @@ def show
     // executed when a marker is selected, indicating the user wants more
     // details about that place.
     function getPlacesDetails(marker, infowindow) {
-      console.log(marker);
+      console.log(infowindow);
       var service = new google.maps.places.PlacesService(map);
+      // console.log(service);
       service.getDetails({
         placeId: marker.id
       }, function(place, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           // Set the marker property on this infowindow so it isn't created again.
           infowindow.marker = marker;
+
           var innerHTML = '<div>';
           if (place.name) {
             innerHTML += '<strong>' + place.name + '</strong>';
