@@ -31,19 +31,26 @@
   <div class="filter_card">
     <h6>Central Location/s</h6>
 
-    <form id="search">
+    <!-- <form id="search">
       <input class="form-control" id="query" type="search" placeholder="Manly">
-    </form>
+    </form> -->
+
+    <div id="location-search">
+    <form role="search" method="get" class="search-form" action="https://www.techcoil.com/search">
+    <input class="form-control" type="search" id="search-field" placeholder="Manly" name="q" title="Search for location">
+
+
+
 
     <script>
 
     console.log("test");
     var newSearch = false;
     $(document).ready(function(){
-      var filtered = [];
-      $("#search").submit(function(e){
+      var filtered = [];//search
+      $("#location-search").submit(function(e){
         e.preventDefault();
-        var centerLocation = $('#query').val();
+        var centerLocation = $('#search-field').val();//query
 
         <% @suburb.each do |suburb| %>
 
@@ -177,7 +184,10 @@
       </script>
 
 
-
+      <button type="submit" class="btn btn-primary"><span class="screen-reader-text">Submit</span>
+      </button>
+  </form>
+ </div>
 
 
       <div class="dropdown-divider"></div>
