@@ -11,3 +11,5 @@ class SuburbsController < ApplicationController
 
   def edit
   end
+
+end  
