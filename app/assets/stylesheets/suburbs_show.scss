@@ -30,13 +30,13 @@ border-bottom: solid 3px white;
 }
 
 // -- Block Backgrounds - Whites -- //
-.show_summary, .show_living_cost, .show_entertainment, .show_amenities {
+.show_amenities, .show_living_cost, .show_transport  {
   margin: 0 auto;
   padding: 50px 60px;
 }
 
 // -- Block Backgrounds - Greys -- //
-.show_lifestyle, .show_renting, .show_transport {
+.show_summary, .show_lifestyle, .show_entertainment, .show_renting {
   margin: 0 auto;
   padding: 50px 60px;
   background-color: #F8F8F8;
@@ -125,6 +125,19 @@ border-bottom: solid 3px white;
 
 .stats_texts_transport p {
   margin-bottom: 0;
+}
+
+// -- Transport Block -- //
+.property_gallery h5 {
+	margin-top: 20px;
+}
+
+.sponsor {
+	font-size: 14px;
+}
+
+.domain_color {
+	color: #0ea800;
 }
 
 
