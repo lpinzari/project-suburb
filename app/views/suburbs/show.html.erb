@@ -1,73 +1,4 @@
-<script>
-  console.log("working")
 
-  $(document).ready(function () {
-
-    const fetchInfo = function () {
-      $.getJSON('/api/info').done(function (info) {
-        $('#brother').text( info.brother );
-        $('#time').text( info.time );
-        $('#uptime').text( info.uptime );
-        $('#lucky').text( info.lucky_number );
-        $('#fortune').text( info.fortune_cookie );
-      });
-    };
-
-    fetchInfo();
-    setInterval(fetchInfo, 2000);
-
-    import requests
-    import json
-
-    client_id = 'client_9a16f1e97850483da3425de17364a2bc'
-    client_secret = 'secret_bdd75693c424db12846f1ed5ef737434'
-    scopes = ['api_properties_read']
-    auth_url = 'https://auth.domain.com.au/v1/connect/token'
-    url_endpoint = 'https://api.domain.com.au/v1/properties/'
-    property_id = 'RF-8884-AK'
-
-    def get_property_info():
-        response = requests.post(auth_url, data = {
-                            'client_id':client_id,
-                            'client_secret':client_secret,
-                            'grant_type':'client_credentials',
-                            'scope':scopes,
-                            'Content-Type':'text/json'
-                            })
-        json_res = response.json()
-        access_token=json_res['access_token']
-        (access_token)
-        auth = {'Authorization':'Bearer ' + access_token}
-        url = url_endpoint + property_id
-        res1 = requests.get(url, headers=auth)
-        r = res1.json()
-        print(r)
-
-    get_property_info()
-
-</script>
-
-<script>
-
-def show
-  @suburb = Suburb.find params[:id]
-
-  require 'httparty'
-
-  @response =
-    HTTParty.get("http://rubygems.org/api/v1/versions/httparty.json")
-  @domain =
-    HTTParty.get("https://auth.domain.com.au/v1/connect/authorize?client_id=client_9a16f1e97850483da3425de17364a2bc&redirect_uri=http://locosfinder.herokuapp.com&response_type=token&scope=openid%20profile%20email%20api_listings_read%20api_agencies_read&nonce={nonce}")
-
-    )
-
-    @getDomainToken = HTTParty.post('https://auth.domain.com.au/v1/connect/token', data, {
-        headers: {
-            'Authorization': `Basic ${base64(`client_9a16f1e97850483da3425de17364a2bc`:`secret_bdd75693c424db12846f1ed5ef737434`)}`,
-            'Content-Type': 'application/x-www-form-urlencoded',
-        }
-
-</script>
 
 <script>
     function initMap(lat, lng, name) {
@@ -138,12 +69,15 @@ def show
             ]
           }
       ];
+
       var myCoords = new google.maps.LatLng(lat, lng);
       var mapOptions = {
       center: myCoords,
       zoom: 15,
       styles: styles
       };
+
+
       // This function takes in a COLOR, and then creates a new marker
       // icon of that color. The icon will be 21 px wide by 34 high, have an origin
       // of 0, 0 and be anchored at 10, 34).
@@ -243,29 +177,31 @@ def show
       }
 
       // Create a searchbox in order to execute a places search
-       var searchBox = new google.maps.places.SearchBox(
-       document.getElementById('places-search'));
+       // var searchBox = new google.maps.places.SearchBox(
+       // document.getElementById('places-search'));
 
        // Bias the searchbox to within the bounds of the map.
-      searchBox.setBounds(map.getBounds());
+      // searchBox.setBounds(map.getBounds());
 
       // Listen for the event fired when the user selects a prediction from the
       // picklist and retrieve more details for that place.
-      searchBox.addListener('places_changed', function() {
-        searchBoxPlaces(this);
-      });
+
+      // searchBox.addListener('places_changed', function() {
+      //   searchBoxPlaces(this);
+      // });
 
       // This function fires when the user selects a searchbox picklist item.
       // It will do a nearby search using the selected query string or place.
-      function searchBoxPlaces(searchBox) {
-        hideMarkers(placeMarkers);
-        var places = searchBox.getPlaces();
-        // For each place, get the icon, name and location.
-        createMarkersForPlaces(places);
-        if (places.length == 0) {
-          window.alert('We did not find any places matching that search!');
-        }
-      }
+
+      // function searchBoxPlaces(searchBox) {
+      //   hideMarkers(placeMarkers);
+      //   var places = searchBox.getPlaces();
+      //   // For each place, get the icon, name and location.
+      //   createMarkersForPlaces(places);
+      //   if (places.length == 0) {
+      //     window.alert('We did not find any places matching that search!');
+      //   }
+      // }
 
       // This function firest when the user select "go" on the places search.
       // It will do a nearby search using the entered query string or place.
@@ -275,8 +211,9 @@ def show
         var placesService = new google.maps.places.PlacesService(map);
         var locDomQuery = document.getElementsByClassName("suburb_description");
         var locationQuery = locDomQuery[0].firstElementChild.innerText;
-        var qSearch = document.getElementById('places-search').value;
-        var finalQuery = qSearch + " near by " + locationQuery;
+        // var qSearch = document.getElementById('places-search').value;
+        var test = document.getElementById('myList').value;
+        var finalQuery = test + " near by " + locationQuery;
         console.log(finalQuery);
         placesService.textSearch({
           query: finalQuery,
@@ -372,6 +309,67 @@ def show
         }
       });
     }//end getDetails
+
+
+//////////////// Properties Display
+
+// Create a new blank array for all the listing markers of the properties.
+var markersProperties = [];
+
+// Style the markers a bit. This will be our listing marker icon for the properties.
+var defaultIconProperty = makeMarkerIcon('0ea800');
+
+// These are the real estate listings that will be shown to the user.
+  // Normally we'd have these in a database instead. (Bondi)
+  var locations = [
+    {title: 'Campbell Parade', location: {lat: -33.8891038 , lng: 151.2756741}},
+    {title: 'Ramsgate Avenue', location: {lat: -33.8868491, lng: 151.2742072}},
+    {title: 'Lamrock Avenue', location: {lat: -33.8920652, lng: 151.27043}}
+  ];
+
+  // The following group uses the location array to create an array of markers on initialize.
+  for (var i = 0; i < locations.length; i++) {
+    // Get the position from the location array.
+    var position = locations[i].location;
+    var title = locations[i].title;
+    // Create a marker per location, and put into markers array.
+    var markerProperty = new google.maps.Marker({
+      position: position,
+      title: title,
+      animation: google.maps.Animation.DROP,
+      icon: defaultIconProperty,
+      id: i
+    });
+
+    // Push the marker to our array of markers.
+    markersProperties.push(markerProperty);
+
+  }
+
+  document.getElementById('show-listings').addEventListener('click', showListings);
+
+  // This function will loop through the markers array and display them all.
+  function showListings() {
+    var bounds = new google.maps.LatLngBounds();
+    // Extend the boundaries of the map for each marker and display the marker
+    for (var i = 0; i < markersProperties.length; i++) {
+      markersProperties[i].setMap(map);
+      bounds.extend(markersProperties[i].position);
+    }
+    map.fitBounds(bounds);
+  }
+
+  document.getElementById('hide-listings').addEventListener('click', function() {
+  hideMarkersProperties(markersProperties);});
+
+  // This function will loop through the listings and hide them all.
+  function hideMarkersProperties(markers) {
+    for (var i = 0; i < markersProperties.length; i++) {
+      markersProperties[i].setMap(null);
+    }
+  }
+
+
 
 
 
@@ -519,8 +517,11 @@ margin-bottom: 0;
 <!-- Amenities w/ Map block -->
 <div class="show_amenities">
   <div class="amenities_description">
-    <h2>Amenities</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur perferendis dolor consequuntur nemo dolores temporibus, sed neque at corrupti ducimus quisquam natus quaerat sunt, rem debitis ad architecto nulla officia.</p>
+    <h2>Find Properties</h2>
+    <div>
+        <input id="show-listings" type="button" value="Show Listings">
+        <input id="hide-listings" type="button" value="Hide Listings">
+    </div>
     <h3>Filter Map</h3>
     <ul>
       <li>Train station</li>
@@ -539,13 +540,21 @@ margin-bottom: 0;
 
   <div class="amenities_mapping">
 
-
-
-
     <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
     <div class="map_interface">
           <span class="text">Search for:</span>
-          <input id="places-search" type="text" placeholder="Ex: Trains">
+          <!-- <input id="places-search" type="text" placeholder="Ex: Trains"> -->
+          <select id = "myList">
+            <option value = "Train Station">Train Station</option>
+            <option value = "Bus Station">Bus Station</option>
+            <option value = "Parks">Parks</option>
+            <option value = "Beaches">Beaches</option>
+            <option value = "Shopping">Shopping</option>
+            <option value = "School">School</option>
+            <option value = "Cafes">Cafes</option>
+            <option value = "Pubs">Pubs</option>
+            <option value = "Hospital">Hospital</option>
+          </select>
           <input id="go-places" type="button" value="Go">
     </div>
     <div id="map"></div>
