@@ -62,6 +62,77 @@ border-bottom: solid 3px white;
   background-color: #F8F8F8;
 }
 
+// -- Ammenities Block -- //
+.inline_block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button_spacing {
+  margin-left: 8px;
+}
+
+.top_spacing {
+  margin-top: 10px;
+}
+
+.button_green {
+  background-color: #0ea800;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+	border-radius: 5px;
+}
+
+.button_green:hover {
+	transition-timing-function: ease-in-out;
+	transition: 0.2s;
+	background-color: #0c9100;
+}
+
+.dropdown_button {
+	background-color: #f8f9fa;
+	border-color: #f8f9fa;
+	height: 32px;
+	border-radius: 5px;
+}
+
+.btn-danger {
+  border: none;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+	border-radius: 5px;
+}
+
+.reset_button {
+	background-color: #6c757d;
+	border: none;
+	color: white;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.reset_button:hover {
+	transition-timing-function: ease-in-out;
+	transition: 0.2s;
+	background-color: #343a40;
+}
+
+
+.button_loco {
+	border: none;
+	padding: 3px 10px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	background-color: #3941bd;
+	color: white;
+}
 
 // -- Summary Block -- //
 .suburb_gallery {
