@@ -213,7 +213,8 @@
         var locationQuery = locDomQuery[0].firstElementChild.innerText;
         // var qSearch = document.getElementById('places-search').value;
         var test = document.getElementById('myList').value;
-        var finalQuery = test + " near by " + locationQuery;
+        var suburbNameTest = "<%= @suburb.name %>";
+        var finalQuery = test + " near by " + suburbNameTest;
         console.log(finalQuery);
         placesService.textSearch({
           query: finalQuery,
@@ -321,21 +322,29 @@ var defaultIconProperty = makeMarkerIcon('0ea800');
 
 // These are the real estate listings that will be shown to the user.
   // Normally we'd have these in a database instead. (Bondi)
-  var locations = [
-    {title: 'Campbell Parade', location: {lat: -33.8891038 , lng: 151.2756741}},
-    {title: 'Ramsgate Avenue', location: {lat: -33.8868491, lng: 151.2742072}},
-    {title: 'Lamrock Avenue', location: {lat: -33.8920652, lng: 151.27043}}
-  ];
+  // var locations = [
+  //   {title: 'Campbell Parade', location: {lat: -33.8891038 , lng: 151.2756741}},
+  //   {title: 'Ramsgate Avenue', location: {lat: -33.8868491, lng: 151.2742072}},
+  //   {title: 'Lamrock Avenue', location: {lat: -33.8920652, lng: 151.27043}}
+  // ];
+
+  var locations = [];
+
+  <% @suburb.houses.each do |house| %>
+    console.log(<%= house.price %>);
+    locations.push({location: {lat: <%= house.lat %> , lng: <%= house.long %>}});
+  <% end %>
+
+  console.log(locations);
 
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {
     // Get the position from the location array.
     var position = locations[i].location;
-    var title = locations[i].title;
+    // var title = locations[i].title;
     // Create a marker per location, and put into markers array.
     var markerProperty = new google.maps.Marker({
       position: position,
-      title: title,
       animation: google.maps.Animation.DROP,
       icon: defaultIconProperty,
       id: i
@@ -715,9 +724,3 @@ margin-bottom: 0;
   </div>
 </div>
 <!-- Entertainment text/image block END -->
-<!--
-  <% @suburb.houses.each do |house| %>
-  <h1>long: <%= house.long %></h1>
-  <h1>Lat: <%= house.lat %></h1>
-  <% end %>
-  -->
