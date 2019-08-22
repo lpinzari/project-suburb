@@ -662,21 +662,26 @@ margin-bottom: 0;
 <!-- Amenities w/ Map block -->
 <div class="show_amenities">
   <div class="amenities_description">
-    <h2>Find Properties</h2>
     <div>
-        <input id="show-listings" type="button" value="Show Listings">
-        <input id="hide-listings" type="button" value="Hide Listings">
+      <div class="inline_block"><h2>Amenities</h2></div>
+      <div class="inline_block button_spacing"></div><input id="new-search" type="button" value="Reset Map" class="reset_button">
+    </div>
+    <h5 class="top_spacing">Property Listings</h5>
+    <div class="top_spacing">
+        <input class="button_green" id="show-listings" type="button" value="Show Listings">
+        <input class="button_green" id="hide-listings" type="button" value="Hide Listings">
     </div>
     <hr>
+    <h5>Estimate Commute</h5>
     <div>
       <span class="text"> Within </span>
-      <select id="max-duration">
+      <select class="dropdown_button" id="max-duration">
         <option value="10">10 min</option>
         <option value="15">15 min</option>
         <option value="30">30 min</option>
         <option value="60">1 hour</option>
       </select>
-      <select id="mode">
+      <select class="dropdown_button" id="mode">
         <option value="DRIVING">drive</option>
         <option value="WALKING">walk</option>
         <option value="BICYCLING">bike</option>
@@ -684,33 +689,28 @@ margin-bottom: 0;
       </select>
       <span class="text">of</span>
       <input id="search-within-time-text" type="text" placeholder="Ex: Address location">
-      <input id="search-within-time" type="button" value="Go">
+      <input class="btn-danger" id="search-within-time" type="button" value="Go">
     </div>
     <hr>
-    <input id="new-search" type="button" value="New search">
+    <h5>Explore the Area</h5>
+    <span class="text">Search for:</span>
+    <!-- <input id="places-search" type="text" placeholder="Ex: Trains"> -->
+    <select id = "myList"class="dropdown_button">
+      <option value = "Train Station">Train Station</option>
+      <option value = "Bus Station">Bus Station</option>
+      <option value = "Parks">Parks</option>
+      <option value = "Beaches">Beaches</option>
+      <option value = "Shopping">Shopping</option>
+      <option value = "School">School</option>
+      <option value = "Cafes">Cafes</option>
+      <option value = "Pubs">Pubs</option>
+      <option value = "Hospital">Hospital</option>
+    </select>
+    <input class="button_loco" id="go-places" type="button" value="Go">
   </div>
 
-
-
-
   <div class="amenities_mapping">
-
-    <h6>latitude: <%= @suburb.lat%>   longitude: <%= @suburb.long%></h6>
     <div class="map_interface">
-          <span class="text">Search for:</span>
-          <!-- <input id="places-search" type="text" placeholder="Ex: Trains"> -->
-          <select id = "myList">
-            <option value = "Train Station">Train Station</option>
-            <option value = "Bus Station">Bus Station</option>
-            <option value = "Parks">Parks</option>
-            <option value = "Beaches">Beaches</option>
-            <option value = "Shopping">Shopping</option>
-            <option value = "School">School</option>
-            <option value = "Cafes">Cafes</option>
-            <option value = "Pubs">Pubs</option>
-            <option value = "Hospital">Hospital</option>
-          </select>
-          <input id="go-places" type="button" value="Go">
     </div>
     <div id="map"></div>
   </div>
