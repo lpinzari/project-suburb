@@ -46,6 +46,7 @@ border-bottom: solid 3px white;
 	text-transform: uppercase;
 	text-align: center;
 	margin-top: 200px;
+	font-size: 50px;
 }
 
 // -- Block Backgrounds - Whites -- //
@@ -168,14 +169,37 @@ border-bottom: solid 3px white;
 	color: #484848;
 }
 
+.domain_link {
+	text-decoration: none;
+	color: #0ea800;
+}
+
+.rent_card:hover {
+  transition-timing-function: ease-in-out;
+  transition: 0.3s;
+  box-shadow: 2px 4px 10px #BEBEBE;
+}
+
 .rent_specs {
 	padding-top: 0;
 }
 
 .specs_space {
 	margin-right: 8px;
+	color: #0ea800;
 }
 
+
+.rent_card:hover a {
+	text-decoration: none;
+	color: #0ea800;
+}
+
+.domain_image img {
+	width: 365px;
+	height: 243px;
+	object-fit: cover;
+}
 
 // -- Amenities -- //
 .amenities_description, .amenities_mapping {

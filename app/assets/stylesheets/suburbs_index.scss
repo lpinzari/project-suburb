@@ -59,6 +59,12 @@
   border-radius: 0;
 }
 
+.suburb_card img {
+	width: 286px;
+	height: 161px;
+	object-fit: cover;
+}
+
 .suburb_card_button {
   color: #3941bd;
   border-color: #3941bd;

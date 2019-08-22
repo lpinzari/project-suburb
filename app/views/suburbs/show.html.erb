@@ -424,7 +424,7 @@ margin-bottom: 0;
 </style>
 <div class="jumbotron jumbotron-fluid parallax">
   <div class="container">
-    <h1 class="jumbo_text"><%= @suburb.name %></h1>
+    <h1 class="jumbo_text font-weight-bolder"><%= @suburb.name %></h1>
   </div>
 </div>
 <!-- Carousel -->
@@ -465,7 +465,7 @@ margin-bottom: 0;
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
 
-      <a class="font-weight-light" href="<%= suburbs_path %>"><i class="fa fa-angle-left"></i> Go Back </a>
+      <a class="font-weight-light" href="<%= suburbs_path %>"><i class="fa fa-angle-left"></i> All Suburbs </a>
     </li>
     <li class="nav-item">
       <a href="#summary">Summary</a>
@@ -498,7 +498,7 @@ margin-bottom: 0;
 <div class="show_summary">
   <!-- Suburb Description -->
   <div class="suburb_description">
-    <h2><%= @suburb.name %></h2>
+    <h2>Living in <%= @suburb.name %></h2>
     <p><%= @suburb.description %></p>
   </div>
 
@@ -599,41 +599,26 @@ margin-bottom: 0;
 <div>
 <div class="property_gallery">
   <!--  Property Gallery -->
-  <h5> Recommended properties <span class="sponsor text-muted">- Powered by <span class="domain_color">Domain</span></h5>
+  <h5> Top listings of the week <span class="sponsor text-muted">- Brought to you by <span class="domain_color">Domain</span></h5>
   <div class="card-deck">
-  <div class="card">
-    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
+  <!-- First House -->
+  <% @suburb.houses.each do |house| %>
+  <div class="card rent_card domain_image">
+    <a href="<%= house.url %>" target="_blank" class="domain_link">
+    <img src="/assets/properties/<%= house.img_path %>" class="card-img-top" alt="...">
     <div class="card-body rent_specs">
       <h5 class="card-title text_greyed">
-        <span class=specs_space>5 <i class="fa fa-bed"></i></span>
-        <span class=specs_space>3 <i class="fa fa-bath"></i></span>
-        <span class=specs_space>2 <i class="fa fa-car"></i></span>
+        <span class="specs_space"><%= house.beds %> <i class="fa fa-bed"></i></span>
+        <span class="specs_space"><%= house.baths %> <i class="fa fa-bath"></i></span>
+        <span class="specs_space"><%= house.cars %> <i class="fa fa-car"></i></span>
+
       </h5>
-      <p class="card-text text-muted">123 Fake Street</p>
+      <p class="card-text text-muted"><%= house.address %></p>
+      <span class="text-muted">$<b><%= number_with_delimiter(house.price, :delimiter => ',')%> pw</b></span>
     </div>
+    </a>
   </div>
-  <div class="card">
-    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
-    <div class="card-body rent_specs">
-      <h5 class="card-title text_greyed">
-        <span class=specs_space>3 <i class="fa fa-bed"></i></span>
-        <span class=specs_space>3 <i class="fa fa-bath"></i></span>
-        <span class=specs_space>2 <i class="fa fa-car"></i></span>
-      </h5>
-      <p class="card-text text-muted">241 Real Street</p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="<%= @suburb.image_url %>" class="card-img-top" alt="...">
-    <div class="card-body rent_specs">
-      <h5 class="card-title text_greyed">
-        <span class=specs_space>2 <i class="fa fa-bed"></i></span>
-        <span class=specs_space>1 <i class="fa fa-bath"></i></span>
-        <span class=specs_space>1 <i class="fa fa-car"></i></span>
-      </h5>
-      <p class="card-text text-muted">322 Porter Street</p>
-    </div>
-  </div>
+  <% end %>
 </div>
   <!--  Property Gallery -->
 </div>
@@ -721,3 +706,9 @@ margin-bottom: 0;
   </div>
 </div>
 <!-- Entertainment text/image block END -->
+<!--
+  <% @suburb.houses.each do |house| %>
+  <h1>long: <%= house.long %></h1>
+  <h1>Lat: <%= house.lat %></h1>
+  <% end %>
+  -->
