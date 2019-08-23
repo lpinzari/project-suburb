@@ -4,6 +4,7 @@ class SuburbsController < ApplicationController
 
   def index
     @suburb = Suburb.all
+    @amenity = Amenity.all
   end
 
   def new

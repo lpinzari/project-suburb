@@ -247,169 +247,325 @@
       </div>
 
 
-<div class="dropdown-divider"></div>
-<h6>Amenities</h6>
+      <div class="dropdown-divider"></div>
+      <h6>Amenities</h6>
 
-<!-- Public Transport Routes -->
-<p>Public transport routes</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
+      <!-- Public Transport Routes -->
+      <p>Public transport routes</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="transport" id="option3" value="3" autocomplete="off"> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="transport" id="option2" value="2" autocomplete="off" checked> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="transport" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
 
-<label><input type="radio" name="gender" value="male">Male</label>
-<label><input type="radio" name="gender" value="female">Female</label>
-<input type="button" value="Get Value">
+
+      <!-- Shopping areas -->
+      <p>Shopping areas</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="shopping" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="shopping" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="shopping" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+
+      <!-- Parks -->
+      <p>Parks</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="park" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="park" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="park" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+      <!-- Beaches -->
+      <p>Beaches</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="beach" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="beach" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="beach" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+      <!-- Schools -->
+      <p>Schools</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="school" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="school" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="school" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+      <!-- Medical Facilities -->
+      <p>Medical Facilities</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="medical" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="medical" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="medical" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+
+      <div class="dropdown-divider"></div>
+      <h6>Entertainment</h6>
+
+      <!-- Bars and pubs -->
+      <p>Bars and pubs</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="bar" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="bar" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="bar" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+      <!-- Cafes -->
+      <p>Cafes</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="cafe" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="cafe" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="cafe" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+      <!-- Restaurants -->
+      <p>Restaurants</p>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="restaurant" id="option3" value="3" autocomplete="off" checked> Essential
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="restaurant" id="option2" value="2" autocomplete="off"> Would be nice
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="restaurant" id="option1" value="1" autocomplete="off"> Don't care
+        </label>
+      </div>
+
+      <button id="submit">Refine</button>
+
 
 <script>
+    // Form input
 
-  $(document).ready(function(){
-          $("input[type='button']").click(function(){
-          	var radioValue = $("input[name='gender']:checked").val();
-              if(radioValue){
-                  alert("Your are a - " + radioValue);
-              }
-          });
+
+    // Declared variables for the input radio buttons
+    let transportSelected;
+    let shoppingSelected;
+    let parkSelected;
+    let beachSelected;
+    let schoolSelected;
+    let medicalSelected;
+    let barSelected;
+    let cafeSelected;
+    let restaurantSelected;
+
+    // Results for radio buttons
+    $("#submit").click(() => {
+
+    transportSelected = $('input[name=transport]:checked').val();
+    console.log('transportSelected', transportSelected)
+
+    shoppingSelected = $('input[name=shopping]:checked').val();
+
+    parkSelected = $('input[name=park]:checked').val();
+
+    beachSelected = $('input[name=beach]:checked').val();
+
+    schoolSelected = $('input[name=school]:checked').val();
+
+    medicalSelected = $('input[name=medical]:checked').val();
+
+    barSelected = $('input[name=bar]:checked').val();
+
+    cafeSelected = $('input[name=cafe]:checked').val();
+
+    restaurantSelected = $('input[name=restaurant]:checked').val();
+
+    // Object created for radio form input
+    let inputAmenities = {
+      transport: transportSelected,
+      shopping: shoppingSelected,
+      park: parkSelected,
+      beach: beachSelected,
+      school: schoolSelected,
+      medical: medicalSelected,
+      bar: barSelected,
+      cafe: cafeSelected,
+      restaurant: restaurantSelected
+    };
+    console.log(inputAmenities)
+
+    /////////////////////////////
+    <!-- OFFENSIVE MATERIAL -->
+
+    // Difference between input form values and suburb values
+
+        let suburbAmenities = [];
+        var data = {};
+
+
+        <% @suburb.each_with_index do |suburb,i| %>
+
+        var suburbName = '<%= suburb.name %>';
+
+        var transportValue = <%= @amenity[i].transport %>
+        transportValue = Number(transportValue)
+        var transportDifference = Number(transportSelected) - transportValue
+        console.log('transportValue',transportValue)
+        console.log('transportDifference', Math.abs(transportDifference))
+
+        var shoppingValue = <%= @amenity[i].shopping %>
+        shoppingValue = Number(shoppingValue)
+        var shoppingDifference = Number(shoppingSelected) - shoppingValue
+        // console.log('shoppingValue',shoppingValue)
+        // console.log('shoppingDifference', Math.abs(shoppingDifference))
+
+        var parkValue = <%= @amenity[i].park %>
+        parkValue = Number(parkValue)
+        var parkDifference = Number(parkSelected) - parkValue
+        // console.log('parkDifference', Math.abs(parkDifference))
+
+        var beachValue = <%= @amenity[i].beach %>
+        beachValue = Number(beachValue)
+        var beachDifference = Number(beachSelected) - beachValue
+        // console.log('beachDifference', Math.abs(beachDifference))
+
+        var schoolValue = <%= @amenity[i].school %>
+        schoolValue = Number(schoolValue)
+        var schoolDifference = Number(schoolSelected) - schoolValue
+        // console.log('schoolDifference', Math.abs(schoolDifference))
+
+        var medicalValue = <%= @amenity[i].medical %>
+        medicalValue = Number(medicalValue)
+        var medicalDifference = Number(medicalSelected) - medicalValue
+        // console.log('medicalDifference', Math.abs(medicalDifference))
+
+        var barValue = <%= @amenity[i].bar %>
+        barValue = Number(barValue)
+        var barDifference = Number(barSelected) - barValue
+        // console.log('barDifference', Math.abs(barDifference))
+
+        var cafeValue = <%= @amenity[i].cafe %>
+        cafeValue = Number(cafeValue)
+        var cafeDifference = Number(cafeSelected) - cafeValue
+        // console.log('cafeDifference', Math.abs(cafeDifference))
+
+        var restaurantValue = <%= @amenity[i].restaurant %>
+        restaurantValue = Number(restaurantValue)
+        var restaurantDifference = Number(restaurantSelected) - restaurantValue
+        // console.log('restaurantDifference', Math.abs(restaurantDifference))
+
+    //////////////////////////
+
+        data[ suburbName ] = {
+          transport: Math.abs(transportDifference),
+          shopping: Math.abs(shoppingDifference),
+          park: Math.abs(parkDifference),
+          beach: Math.abs(beachDifference),
+          school: Math.abs(schoolDifference),
+          medical: Math.abs(medicalDifference),
+          bar: Math.abs(barDifference),
+          cafe: Math.abs(cafeDifference),
+          restaurant: Math.abs(restaurantDifference)
+        };
+
+        console.log('data', data)
+
+      <% end %>
+    function sumArray (array){
+      let sum = 0;
+      for (let i=0; i< array.length; i++){
+         sum += array[i];
+      }
+      return sum;
+    };
+
+      var temp = document.getElementsByClassName("score-card")
+
+      let sums = [];
+      let w = 0
+      for (let suburbName in data) {
+        // sum += (Object.values(data[suburbName]));
+        let sum = 0
+        // console.log(Object.values(data[suburbName]));
+        let obj = Object.values(data[suburbName]);
+        sum = 100*(sumArray(obj)/18).toFixed(2);
+        let sumPercent = sum+" %";
+        temp[w].innerText = sumPercent;
+        w+=1;
+
+      }
+
+      console.log(sums);
+
+          // console.log('diff', transportDifference);
+          // console.log(suburbAmenities)
+          // console.log(suburbAmenities[0].transport)
 
       });
 
+    // Values for each suburb (based on seed data)
 
+    let suburbAmenities = [];
+        <% @suburb.each_with_index do |suburb,i| %>
+        suburbAmenities.push(
+        {
+          transport: <%= @amenity[i].transport %>,
+          shopping: <%= @amenity[i].shopping %>,
+          park: <%= @amenity[i].park %>,
+          beach: <%= @amenity[i].beach %>,
+          school: <%= @amenity[i].school %>,
+          medical: <%= @amenity[i].medical %>,
+          bar: <%= @amenity[i].bar %>,
+          cafe: <%= @amenity[i].cafe %>,
+          restaurant: <%= @amenity[i].restaurant %>
+        }
+      );
 
-$('#btn-group').click(function() {
-   if($('#option1').is(':checked')) { console.log("it's checked"); }
-});
+      <% end %>
 
-
-$("#submit").click(() => {
-  const val = $('input[name=q12_3]:checked').val();
-  alert(val);
-
-  <input type="button" value="Get Value">
-});
-</script>
-
-<!-- Shopping areas -->
-<p>Shopping areas</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-<!-- Parks -->
-<p>Parks</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-<!-- Beaches -->
-<p>Beaches</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-<!-- Schools -->
-<p>Schools</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-<!-- Medical Facilities -->
-<p>Medical Facilities</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-
-<div class="dropdown-divider"></div>
-<h6>Entertainment</h6>
-
-<!-- Bars and pubs -->
-<p>Bars and pubs</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-<!-- Cafes -->
-<p>Cafes</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
-
-<!-- Restaurants -->
-<p>Restaurants</p>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Essential
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Would be nice
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Don't care
-  </label>
-</div>
+    </script>
 
 </div>
 
@@ -425,6 +581,7 @@ $("#submit").click(() => {
         <div class="card-body text_align">
           <h5 class="card-title"><%= suburb.name %></h5>
           <p class="card-text"><%= truncate(suburb.description, length: 100) %></p>
+          <div class="score-card">0</div>
           <!-- <p class="card-text"><%= suburb.median_rent %></p>
           <p class="card-text"><%= suburb.living_cost %></p>
           <p class="card-text"><%= suburb.long %></p>
