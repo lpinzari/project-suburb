@@ -123,3 +123,90 @@ s6.houses << p16 << p17 << p18
 puts "Houses linked!"
 
 puts "Looks good boss! 👌"
+
+a1 = Amenity.create(
+  suburb_id: 1,
+  transport: 2,
+  shopping: 3,
+  park: 1,
+  beach: 2,
+  school: 3,
+  medical: 1,
+  bar: 2,
+  cafe: 3,
+  restaurant: 1
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+
+a2 = Amenity.create(
+  suburb_id: 2,
+  transport: 3,
+  shopping: 3,
+  park: 3,
+  beach: 3,
+  school: 3,
+  medical: 3,
+  bar: 3,
+  cafe: 3,
+  restaurant: 3
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+
+
+a3 = Amenity.create(
+  suburb_id: 3,
+  transport: 1,
+  shopping: 1,
+  park: 1,
+  beach: 1,
+  school: 1,
+  medical: 1,
+  bar: 1,
+  cafe: 1,
+  restaurant: 1
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+
+a4 = Amenity.create(
+  suburb_id: 4,
+  transport: 2,
+  shopping: 2,
+  park: 2,
+  beach: 2,
+  school: 2,
+  medical: 2,
+  bar: 2,
+  cafe: 2,
+  restaurant: 2
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+
+a5 = Amenity.create(
+  suburb_id: 5,
+  transport: 1,
+  shopping: 3,
+  park: 2,
+  beach: 3,
+  school: 2,
+  medical: 1,
+  bar: 2,
+  cafe: 3,
+  restaurant: 3
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+puts "Amenity count: #{Amenity.all.length}"
+
+a6 = Amenity.create(
+  suburb_id: 5,
+  transport: 1,
+  shopping: 3,
+  park: 2,
+  beach: 3,
+  school: 2,
+  medical: 1,
+  bar: 2,
+  cafe: 3,
+  restaurant: 3
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+puts "Amenity count: #{Amenity.all.length}"

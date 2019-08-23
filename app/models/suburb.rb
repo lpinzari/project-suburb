@@ -14,6 +14,9 @@
 
 class Suburb < ApplicationRecord
 
+  has_many :amenities
+
+
   has_many :houses
 
 end

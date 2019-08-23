@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_21_102211) do
+ActiveRecord::Schema.define(version: 2019_08_23_001454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenities", force: :cascade do |t|
+    t.integer "suburb_id"
+    t.integer "transport"
+    t.integer "shopping"
+    t.integer "park"
+    t.integer "beach"
+    t.integer "school"
+    t.integer "medical"
+    t.integer "bar"
+    t.integer "cafe"
+    t.integer "restaurant"
+  end
 
   create_table "features", force: :cascade do |t|
     t.text "suburb_id"
