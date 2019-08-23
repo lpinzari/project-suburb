@@ -83,6 +83,42 @@ lat: -33.9199068)
 puts "Suburbs count: #{Suburb.all.length}"
 puts "Suburbs names: #{Suburb.all.pluck("name")}"
 
+s7 = Suburb.create(
+name: "Wyong",
+description: "Wyong is a town of the Central Coast region of New South Wales, located approximately 63 km SSW of Newcastle and 89 km NNE of Sydney. Established in 1888, it is one of the two administrative centres for the Central Coast Council local government area.",
+image_url: "https://www.centralcoastaustralia.com.au/imagesdb/gallery/dsc03208.jpg",
+median_rent: 340,
+living_cost: 1,
+long: 151.4123816,
+lat: -33.2787273)
+
+puts "Suburbs count: #{Suburb.all.length}"
+puts "Suburbs names: #{Suburb.all.pluck("name")}"
+
+s8 = Suburb.create(
+name: "Katoomba",
+description: "Katoomba is the chief town of the City of Blue Mountains in New South Wales, Australia, and the administrative headquarters of Blue Mountains City Council. Katoomba is a base for bush and nature walks in the surrounding Blue Mountains.",
+image_url: "https://www.bluemts.com.au/imagesDB/gallery/DSC_0063.jpg",
+median_rent: 410,
+living_cost: 2,
+long: 150.2779455,
+lat: -33.7039019)
+
+puts "Suburbs count: #{Suburb.all.length}"
+puts "Suburbs names: #{Suburb.all.pluck("name")}"
+
+s9 = Suburb.create(
+name: "Mosman",
+description: "Mosman is a suburb on the Lower North Shore of Sydney, in the state of New South Wales, Australia. Mosman is located 8 kilometres north-east of the Sydney central business district and is the administrative centre for the local government area of the Municipality of Mosman.",
+image_url: "https://www.propertyproviders.com.au/database/images/496_1.jpg",
+median_rent: 1475,
+living_cost: 3,
+long: 151.2311086,
+lat: -33.8282967)
+
+puts "Suburbs count: #{Suburb.all.length}"
+puts "Suburbs names: #{Suburb.all.pluck("name")}"
+
 House.destroy_all
 puts "Creating houses..."
 
@@ -127,14 +163,14 @@ puts "Looks good boss! 👌"
 a1 = Amenity.create(
   suburb_id: 1,
   transport: 2,
-  shopping: 3,
+  shopping: 2,
   park: 1,
-  beach: 2,
-  school: 3,
+  beach: 3,
+  school: 2,
   medical: 1,
   bar: 2,
   cafe: 3,
-  restaurant: 1
+  restaurant: 2
 )
 puts "Amenity name: #{Amenity.all.pluck("transport")}"
 
@@ -142,10 +178,10 @@ a2 = Amenity.create(
   suburb_id: 2,
   transport: 3,
   shopping: 3,
-  park: 3,
-  beach: 3,
-  school: 3,
-  medical: 3,
+  park: 1,
+  beach: 1,
+  school: 2,
+  medical: 2,
   bar: 3,
   cafe: 3,
   restaurant: 3
@@ -156,23 +192,9 @@ puts "Amenity name: #{Amenity.all.pluck("transport")}"
 a3 = Amenity.create(
   suburb_id: 3,
   transport: 1,
-  shopping: 1,
-  park: 1,
-  beach: 1,
-  school: 1,
-  medical: 1,
-  bar: 1,
-  cafe: 1,
-  restaurant: 1
-)
-puts "Amenity name: #{Amenity.all.pluck("transport")}"
-
-a4 = Amenity.create(
-  suburb_id: 4,
-  transport: 2,
   shopping: 2,
-  park: 2,
-  beach: 2,
+  park: 1,
+  beach: 3,
   school: 2,
   medical: 2,
   bar: 2,
@@ -181,15 +203,29 @@ a4 = Amenity.create(
 )
 puts "Amenity name: #{Amenity.all.pluck("transport")}"
 
+a4 = Amenity.create(
+  suburb_id: 4,
+  transport: 2,
+  shopping: 2,
+  park: 3,
+  beach: 1,
+  school: 2,
+  medical: 2,
+  bar: 3,
+  cafe: 2,
+  restaurant: 2
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+
 a5 = Amenity.create(
   suburb_id: 5,
-  transport: 1,
-  shopping: 3,
+  transport: 3,
+  shopping: 2,
   park: 2,
-  beach: 3,
-  school: 2,
+  beach: 1,
+  school: 1,
   medical: 1,
-  bar: 2,
+  bar: 3,
   cafe: 3,
   restaurant: 3
 )
@@ -197,16 +233,62 @@ puts "Amenity name: #{Amenity.all.pluck("transport")}"
 puts "Amenity count: #{Amenity.all.length}"
 
 a6 = Amenity.create(
-  suburb_id: 5,
+  suburb_id: 6,
   transport: 1,
-  shopping: 3,
-  park: 2,
+  shopping: 2,
+  park: 1,
+  beach: 1,
+  school: 2,
+  medical: 3,
+  bar: 2,
+  cafe: 1,
+  restaurant: 2
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+puts "Amenity count: #{Amenity.all.length}"
+
+a7 = Amenity.create(
+  suburb_id: 7,
+  transport: 1,
+  shopping: 1,
+  park: 1,
   beach: 3,
   school: 2,
   medical: 1,
-  bar: 2,
+  bar: 1,
+  cafe: 1,
+  restaurant: 2
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+puts "Amenity count: #{Amenity.all.length}"
+
+a8 = Amenity.create(
+  suburb_id: 8,
+  transport: 1,
+  shopping: 1,
+  park: 3,
+  beach: 1,
+  school: 1,
+  medical: 1,
+  bar: 1,
   cafe: 3,
-  restaurant: 3
+  restaurant: 1
+)
+puts "Amenity name: #{Amenity.all.pluck("transport")}"
+puts "Amenity count: #{Amenity.all.length}"
+
+
+a9 = Amenity.create(
+  suburb_id: 9,
+  transport: 2,
+  shopping: 1,
+  park: 3,
+  beach: 2,
+  school: 3,
+  medical: 2,
+  bar: 1,
+  cafe: 3,
+  restaurant: 1
 )
 puts "Amenity name: #{Amenity.all.pluck("transport")}"
 puts "Amenity count: #{Amenity.all.length}"
