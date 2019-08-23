@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="/">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link active locos_color" href="/">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%= suburbs_path %>">Suburbs</a>
@@ -19,15 +19,6 @@
 <!-- NavBar END -->
 
 <style>
-.parallax_home0 {
-min-height: 300px;
-background-attachment: fixed;
-background-size: cover;
-background-position: 50% 50%;
-background-color: white;
-margin-bottom: 0;
-}
-
 .parallax_home0 h1 {
   color: #3941bd;
 }
@@ -72,43 +63,54 @@ margin-bottom: 0;
   color: white;
   font-size: 18px;
 }
+
+.text_middle {
+  margin-top: 170px;
+}
+
+.text_middle p {
+  font-size: 22px;
+}
+
 </style>
 
-
-
-
-<div class="jumbotron jumbotron-fluid parallax_home0">
-  <div class="container">
+  <div class="container_header">
     <h1 class="jumbo_text_welcome font-weight-bolder">Welcome to Locus!</h1>
-    <p class="text_align">Your easy guide to the Suburbs.</p>
-    <p class="text_align">We have put in the hard work to make it easier for you to find your next home.</p> <p class="text_align">Locus is for...</p>
+    <h6 class="text_align">Your simple guide to the Suburbs.</h6>
+    <form action="/suburbs">
+    <input type="submit" value="Let's get started!" class="button_loco_index"/>
+    </form>
+    <br>
+    <p></p>
+    <p class="text_align"><i>We have put in the hard work to make it easier for you to find your next home. Locus is for...</i></p>
   </div>
-</div>
 
 <div class="jumbotron jumbotron-fluid parallax_home1">
-  <div class="container">
+  <div class="container text_middle">
     <h1 class="jumbo_text_welcome font-weight-bolder">Families</h1>
     <p class="text_align text_color_white">...who are "overwhelmed, trying to find a place that meets the requirements of their family." </p>
   </div>
 </div>
 
 <div class="jumbotron jumbotron-fluid parallax_home2">
-  <div class="container">
+  <div class="container text_middle">
     <h1 class="jumbo_text_welcome font-weight-bolder">Couples</h1>
     <p class="text_align text_color_white">...looking for "an affordable neighbourhood with a good reputation." </p>
   </div>
 </div>
 
 <div class="jumbotron jumbotron-fluid parallax_home3">
-  <div class="container">
+  <div class="container text_middle">
     <h1 class="jumbo_text_welcome font-weight-bolder">Young Professionals</h1>
     <p class="text_align text_color_white">...wanting "something simple that tells me exactly where I should live, without having to waste my time looking through twenty options." </p>
   </div>
 </div>
 
-<div class="jumbotron jumbotron-fluid parallax_home4">
-<div class="container">
-  <h1 class="jumbo_text_welcome font-weight-bolder">Let's get started!</h1>
-  <p class="text_align">We have put in the hard work to make it easier for you to find your next home.</p>
-</div>
+<div class="container_header">
+  <h1 class="jumbo_text_welcome font-weight-bolder">Okay, I am convinced!</h1>
+  <p class="text_align"><i>But that's enough talk...</i></p>
+  <form action="/suburbs">
+  <input type="submit" value="Let's get started!" class="button_loco_index"/>
+  </form>
+  <br>
 </div>

@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// -- slider color --//
+input[type="range"]::-webkit-slider-thumb {
+    background: #3941bd;
+}
+input[type=range]::-moz-range-thumb {
+    background: #3941bd;
+}
+input[type=range]::-ms-thumb {
+    background: #3941bd;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+  background-color:#3941bd;
+}
+
+// -- Navbar -- //
+.locos_color {
+  color: #3941bd !important;
+}
+
 // -- Heading Text -- //
 .text_align {
   text-align: center;
@@ -22,15 +42,52 @@
   padding: 30px;
   border-right: solid 1px #E0E0E0;
   border-top: solid 1px #E0E0E0;
+}
 
+.range_color {
+  color: #3941bd !important;
 }
 
 .slidecontainer {
   padding-top: 1rem;
 }
 
+.button_loco_index {
+	border: none;
+	padding: 5px 69px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	background-color: #3941bd;
+	color: white;
+  margin-top: 5px;
+}
+
+.button_loco_index:hover {
+	background-color: #3239a6;
+}
+
 
 // -- Suburb List content -- //
+.percentage_circle {
+  border-radius: 50% !important;
+  color: #3941bd;
+  background: white;
+  height: 50px;
+  width: 50px;
+  line-height: 13px;
+  z-index: -1;
+  font-size: 12px;
+  text-align: center;
+  box-shadow: 2px 4px 10px #BEBEBE;
+}
+
+.percentage_circle p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .suburbs_cardholder {
   width: 903px;
   margin: 0 auto;
@@ -52,17 +109,19 @@
   display: inline-block;
   margin-left: 10px;
   margin-bottom: 15px;
-  border-radius: 0;
+  border-radius: 5px;
+  border-color: white;
 }
 
-.suburb_card img {
-  border-radius: 0;
+.suburb_card div:hover {
+  border-color: #DCDCDC;
 }
 
 .suburb_card img {
 	width: 286px;
 	height: 161px;
 	object-fit: cover;
+  border-radius: 5px;
 }
 
 .suburb_card_button {
@@ -77,7 +136,7 @@
 }
 
 .suburb_card2 div {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border-radius: 0;
 }
 

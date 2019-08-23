@@ -68,19 +68,18 @@ border-bottom: solid 3px white;
   vertical-align: middle;
 }
 
-.button_spacing {
-  margin-left: 8px;
-}
-
 .top_spacing {
   margin-top: 10px;
 }
 
+.top_spacing_specific{
+	margin-top: 18px;
+}
+
 .button_green {
-  background-color: #0ea800;
-  border: none;
-  color: white;
-  padding: 5px 15px;
+  border-color: #0ea800;
+  color: #0ea800;
+  padding: 3px 10px;
   text-align: center;
   text-decoration: none;
 	border-radius: 5px;
@@ -89,7 +88,8 @@ border-bottom: solid 3px white;
 .button_green:hover {
 	transition-timing-function: ease-in-out;
 	transition: 0.2s;
-	background-color: #0c9100;
+	background-color: #0ea800;
+	color: white;
 }
 
 .dropdown_button {
@@ -97,6 +97,12 @@ border-bottom: solid 3px white;
 	border-color: #f8f9fa;
 	height: 32px;
 	border-radius: 5px;
+}
+
+.text_input {
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 3px 7px;
 }
 
 .btn-danger {
@@ -108,19 +114,20 @@ border-bottom: solid 3px white;
 }
 
 .reset_button {
-	background-color: #6c757d;
-	border: none;
-	color: white;
-	padding: 4px 10px;
+	color: grey;
+	border-color: grey;
+	padding: 3px 10px;
 	text-align: center;
 	text-decoration: none;
 	border-radius: 5px;
+	margin-top: 30px;
 }
 
 .reset_button:hover {
 	transition-timing-function: ease-in-out;
 	transition: 0.2s;
-	background-color: #343a40;
+	background-color: #6c757d;
+	color: white !important;
 }
 
 
@@ -132,6 +139,10 @@ border-bottom: solid 3px white;
 	border-radius: 5px;
 	background-color: #3941bd;
 	color: white;
+}
+
+.button_loco:hover {
+	background-color: #3239a6;
 }
 
 // -- Summary Block -- //

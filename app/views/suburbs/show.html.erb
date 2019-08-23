@@ -533,31 +533,10 @@ var highlightedIconProperty = makeMarkerIcon('FFFF24');
     });
 </script>
 
-
-<!-- NavBar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-  <a class="navbar-brand" href="/">Locus</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<%= suburbs_path %>">Suburbs</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- NavBar END -->
-
-
+<!-- Need to paste styling here to get access to the ERB tags! -->
 <style>
 .parallax {
-min-height: 600px;
+min-height: 700px;
 background-attachment: fixed;
 background-size: cover;
 background-position: 50% 50%;
@@ -664,15 +643,13 @@ margin-bottom: 0;
   <div class="amenities_description">
     <div>
       <div class="inline_block"><h2>Amenities</h2></div>
-      <div class="inline_block button_spacing"></div><input id="new-search" type="button" value="Reset Map" class="reset_button">
     </div>
-    <h5 class="top_spacing">Property Listings</h5>
+    <h5 class="top_spacing text-muted font-weight-normal">Property listings</h5>
     <div class="top_spacing">
         <input class="button_green" id="show-listings" type="button" value="Show Listings">
         <input class="button_green" id="hide-listings" type="button" value="Hide Listings">
     </div>
-    <hr>
-    <h5>Estimate Commute</h5>
+    <h5 class="text-muted top_spacing_specific font-weight-normal">Estimate commute from properties</h5>
     <div>
       <span class="text"> Within </span>
       <select class="dropdown_button" id="max-duration">
@@ -682,31 +659,34 @@ margin-bottom: 0;
         <option value="60">1 hour</option>
       </select>
       <select class="dropdown_button" id="mode">
-        <option value="DRIVING">drive</option>
-        <option value="WALKING">walk</option>
-        <option value="BICYCLING">bike</option>
-        <option value="TRANSIT">transit ride</option>
+        <option value="DRIVING">Drive</option>
+        <option value="WALKING">Walk</option>
+        <option value="BICYCLING">Bike</option>
+        <option value="TRANSIT">Transit</option>
       </select>
       <span class="text">of</span>
-      <input id="search-within-time-text" type="text" placeholder="Ex: Address location">
+      <input class="text_input" id="search-within-time-text" type="text" placeholder="Location address">
       <input class="btn-danger" id="search-within-time" type="button" value="Go">
     </div>
-    <hr>
-    <h5>Explore the Area</h5>
+    <hr class="hr_spacing">
+    <h5 class="text-muted font-weight-normal">Explore the area</h5>
     <span class="text">Search for:</span>
     <!-- <input id="places-search" type="text" placeholder="Ex: Trains"> -->
     <select id = "myList"class="dropdown_button">
-      <option value = "Train Station">Train Station</option>
-      <option value = "Bus Station">Bus Station</option>
+      <option value = "Train Station">Train Stations</option>
+      <option value = "Bus Station">Bus Stations</option>
       <option value = "Parks">Parks</option>
       <option value = "Beaches">Beaches</option>
       <option value = "Shopping">Shopping</option>
-      <option value = "School">School</option>
-      <option value = "Cafes">Cafes</option>
+      <option value = "School">Schools</option>
+      <option value = "Cafes">Cafés</option>
       <option value = "Pubs">Pubs</option>
-      <option value = "Hospital">Hospital</option>
+      <option value = "Hospital">Hospitals</option>
     </select>
-    <input class="button_loco" id="go-places" type="button" value="Go">
+    <input class="btn-danger" id="go-places" type="button" value="Go">
+    <div>
+      <div class="inline_block button_spacing"></div><input id="new-search" type="button" value="Reset Map" class="reset_button">
+    </div>
   </div>
 
   <div class="amenities_mapping">
