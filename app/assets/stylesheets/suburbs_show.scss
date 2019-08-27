@@ -278,12 +278,13 @@ padding: 3px 7px;
 }
 
 .domain_image img {
-	width: 365px;
-	height: 243px;
+	max-width: 365px;
+	max-height: 243px;
 	object-fit: cover;
 }
 
 // -- Amenities -- //
+
 .amenities_description, .amenities_mapping {
   display: inline-block;
   width: 500px;
@@ -295,5 +296,6 @@ padding: 3px 7px;
 
 .amenities_mapping {
   vertical-align: top;
-  padding: 0 70px;
+  padding: 0 10px;
+	margin-top: 20px;
 }
