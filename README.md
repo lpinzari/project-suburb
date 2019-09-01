@@ -15,7 +15,7 @@ Locus is a web app which allows users to get a details breakdown of the suburbs 
 
 It utilises technologies such as Ruby on Rails (backend), Google Map API, Bootstrap, JQuery, Vanilla JS.
 
-The application is deployed on heroku and can be accessed by clicming the followning link [Locus Finder](https://www.locosfinder.herokuapp.com)
+The application is deployed on heroku and can be accessed by clicming the followning link [Locus Finder](https://locosfinder.herokuapp.com/)
 
 Time to complete project: 5 days.
 
