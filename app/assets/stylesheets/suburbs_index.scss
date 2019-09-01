@@ -69,6 +69,11 @@ input[type=range]::-ms-thumb {
 
 
 // -- Suburb List content -- //
+
+.content_body {
+  display: flex;
+}
+
 .percentage_circle {
   border-radius: 50% !important;
   color: #3941bd;
@@ -89,7 +94,7 @@ input[type=range]::-ms-thumb {
 }
 
 .suburbs_cardholder {
-  width: 903px;
+  max-width: 903px;
   margin: 0 auto;
   margin-left: 5px;
   display: inline-block;
